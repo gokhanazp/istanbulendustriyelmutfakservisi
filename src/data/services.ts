@@ -10,6 +10,9 @@ export const services: Service[] = [
       "Endüstriyel mutfaklar için vazgeçilmez olan ocakların bakım ve onarım işlemlerini profesyonel ekibimiz gerçekleştirmektedir. Lokantalar, resepsiyon mutfakları ve gıda işletmelerinde kullanılan ağır yükümlü ocakların performansını maksimum seviyede tutmak için düzenli servis ve acil durum müdahaleleri sunuyoruz. Orijinal yedek parçalar kullanarak ocakların ömrünü uzatırız ve verimli çalışmasını garantiler.",
     icon: "flame",
     category: "pisirme",
+    seoTitle: "Endüstriyel Ocak Tamiri & Servisi İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da endüstriyel ocak tamiri, endüstriyel ocak servisi, endüstriyel ocak bakımı ve arıza onarımı. Profesyonel endüstriyel ocak tamircisi ekibimiz 7/24 hizmetinizde. Aynı gün müdahale garantisi.",
+    seoKeywords: ["endüstriyel ocak servisi", "endüstriyel ocak tamiri", "endüstriyel ocak tamircisi", "endüstriyel ocak bakımı", "endüstriyel ocak arızası", "endüstriyel ocak onarımı", "endüstriyel ocak ustası", "endüstriyel ocak teknik servis", "İstanbul endüstriyel ocak servisi"],
   },
   {
     id: "endust-firin",
@@ -20,6 +23,9 @@ export const services: Service[] = [
       "Fırın ve pizza fırınları da dahil olmak üzere tüm endüstriyel fırın modellerinin bakım, onarım ve kalibrasyonu için hizmet vermekteyiz. Elektrikli, gazlı ve kombineli fırınlarda sorunlar yaşadığında 24/7 acil destek hizmetimize başvurabilirsiniz. Fırınların ısıtma performansını kontrol edip gerekli ayarlamaları yaparak yemek kalitesini artırırız.",
     icon: "fire",
     category: "pisirme",
+    seoTitle: "Endüstriyel Fırın Tamiri & Servisi İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da endüstriyel fırın tamiri, endüstriyel fırın servisi ve bakımı. Endüstriyel fırın tamircisi ekibimiz elektrikli, gazlı ve kombineli fırınlarda 7/24 acil onarım hizmeti sunuyor.",
+    seoKeywords: ["endüstriyel fırın servisi", "endüstriyel fırın tamiri", "endüstriyel fırın tamircisi", "endüstriyel fırın bakımı", "endüstriyel fırın arızası", "endüstriyel fırın onarımı", "endüstriyel fırın ustası", "İstanbul endüstriyel fırın servisi"],
   },
   {
     id: "izgara",
@@ -27,9 +33,12 @@ export const services: Service[] = [
     slug: "izgara-servisi",
     shortDescription: "Ticari izgaraların servis ve bakım hizmetleri",
     description:
-      "Restaurant ve kebapçıların vazgeçilmez ekipmanı olan endüstriyel izgaraların tamamen temizlenmesi, bakımı ve onarımı sunuyoruz. Izgara ızgara yüzeylerinin çeşitli sorunlarından tutun da ısıtma sistemlerindeki arızalara kadar tüm problemleri çözmekteyiz. Hijyen standartlarına uygun şekilde derinlemesine temizlik ve periyodik bakım programları oluştururuz.",
+      "Restaurant ve kebapçıların vazgeçilmez ekipmanı olan endüstriyel izgaraların tamamen temizlenmesi, bakımı ve onarımı sunuyoruz. Izgara yüzeylerinin çeşitli sorunlarından tutun da ısıtma sistemlerindeki arızalara kadar tüm problemleri çözmekteyiz. Hijyen standartlarına uygun şekilde derinlemesine temizlik ve periyodik bakım programları oluştururuz.",
     icon: "utensils",
     category: "pisirme",
+    seoTitle: "Endüstriyel Izgara Tamiri & Servisi İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da endüstriyel ızgara tamiri, ızgara servisi ve bakımı. Profesyonel ızgara tamircisi ekibimiz restoran ve kebapçılar için 7/24 acil onarım hizmeti sunuyor.",
+    seoKeywords: ["ızgara servisi", "ızgara tamiri", "ızgara tamircisi", "endüstriyel ızgara bakımı", "ızgara arızası", "ızgara onarımı", "ızgara ustası", "İstanbul ızgara servisi"],
   },
   {
     id: "fritoz",
@@ -40,6 +49,9 @@ export const services: Service[] = [
       "Endüstriyel mutfaklarda yoğun şekilde kullanılan fritözlerin sağlık ve güvenlik standartlarında bakımını düzenli aralıklarla gerçekleştirmekteyiz. Fritöz yağı filtrasyon sistemi, ısıtma dirençleri, termostat ve kontrol panelleri gibi kritik bileşenlerin onarım ve değişimini yapıyoruz. Gıda hijyeni kurallarına tam uygun şekilde fritözlerinizi temizler ve sertifike ederiz.",
     icon: "droplet",
     category: "pisirme",
+    seoTitle: "Fritöz Tamiri & Servisi İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da fritöz tamiri, fritöz servisi ve bakımı. Endüstriyel fritöz tamircisi ekibimiz termostat, ısıtma direnci ve kontrol paneli arızalarında 7/24 hizmet veriyor.",
+    seoKeywords: ["fritöz servisi", "fritöz tamiri", "fritöz tamircisi", "endüstriyel fritöz bakımı", "fritöz arızası", "fritöz onarımı", "fritöz ustası", "İstanbul fritöz servisi"],
   },
   {
     id: "makarna-haslama",
@@ -50,6 +62,9 @@ export const services: Service[] = [
       "Endüstriyel mutfakların önemli ekipmanlarından olan makarna haşlama tezgahlarının bakım, onarım ve kalibrasyonunu profesyonel bir şekilde sunmaktayız. Su basıncı sorunları, ısıtma sistemlerindeki aksaklıklar ve mekanik arızaları hızlı bir şekilde tespit edip gideriz. Döner, makarna ve diğer haşlama işlemleri için gerekli sıcaklık ve basınç ayarlamalarını kontrol ederiz.",
     icon: "soup",
     category: "pisirme",
+    seoTitle: "Makarna Haşlama Makinesi Tamiri & Servisi İstanbul | 7/24",
+    seoDescription: "İstanbul'da makarna haşlama makinesi tamiri, makarna haşlama tezgahı servisi ve bakımı. Profesyonel tamircilerimiz ısıtma ve basınç arızalarında 7/24 acil müdahale sunuyor.",
+    seoKeywords: ["makarna haşlama servisi", "makarna haşlama tamiri", "makarna haşlama tamircisi", "makarna haşlama tezgahı bakımı", "makarna haşlama arızası", "İstanbul makarna haşlama servisi"],
   },
   {
     id: "benmari",
@@ -60,6 +75,9 @@ export const services: Service[] = [
       "Sıcak yemek saklama ve ısıtma işlemleri için kullanılan benmari sistemlerinin ısıtma dirençleri, termostat ve kontrol cihazlarının bakım onarımını gerçekleştirmekteyiz. Su basıncı ve ısı düzensizliklerinden kaynaklanan sorunları çözmek için periyodik bakım programları sunuyoruz. Hijyen koşullarını sağlamak amacıyla benmariların iç ve dış temizliğini yapıp korozi oluşumunu önleriz.",
     icon: "droplets",
     category: "pisirme",
+    seoTitle: "Benmari Tamiri & Servisi İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da benmari tamiri, benmari servisi ve bakımı. Benmari tamircisi ekibimiz ısıtma direnci, termostat ve su banyosu arızalarında 7/24 profesyonel hizmet sunuyor.",
+    seoKeywords: ["benmari servisi", "benmari tamiri", "benmari tamircisi", "benmari bakımı", "benmari arızası", "benmari onarımı", "benmari ustası", "İstanbul benmari servisi"],
   },
   {
     id: "endust-buzdolabi",
@@ -67,9 +85,12 @@ export const services: Service[] = [
     slug: "endustriyel-buzdolabi-servisi",
     shortDescription: "Profesyonel buzdolaplarının bakım, onarım ve gaz dolumu",
     description:
-      "Lokantalar, oteleler ve gıda işletmelerinde kullanılan endüstriyel buzdolaplarının bakım, onarım ve soğutma gazı dolumu işlemlerini gerçekleştirmekteyiz. Kompresör, fan, buharlaştırıcı ve kondenser gibi kritik parçaların arızalarını tespit edip onarıyoruz. Soğutma performansını kontrol edip, enerji verimliliğini maksimuma çıkartarak işletme masraflarınızı azaltırız.",
+      "Lokantalar, oteller ve gıda işletmelerinde kullanılan endüstriyel buzdolaplarının bakım, onarım ve soğutma gazı dolumu işlemlerini gerçekleştirmekteyiz. Kompresör, fan, buharlaştırıcı ve kondenser gibi kritik parçaların arızalarını tespit edip onarıyoruz. Soğutma performansını kontrol edip, enerji verimliliğini maksimuma çıkartarak işletme masraflarınızı azaltırız.",
     icon: "snowflake",
     category: "sogutma",
+    seoTitle: "Endüstriyel Buzdolabı Tamiri & Servisi İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da endüstriyel buzdolabı tamiri, endüstriyel buzdolabı servisi, gaz dolumu ve bakımı. Endüstriyel buzdolabı tamircisi ekibimiz kompresör, fan ve soğutma arızalarında 7/24 hizmet veriyor.",
+    seoKeywords: ["endüstriyel buzdolabı servisi", "endüstriyel buzdolabı tamiri", "endüstriyel buzdolabı tamircisi", "endüstriyel buzdolabı bakımı", "endüstriyel buzdolabı arızası", "endüstriyel buzdolabı gaz dolumu", "İstanbul endüstriyel buzdolabı servisi"],
   },
   {
     id: "sanayi-buzdolabi",
@@ -80,6 +101,9 @@ export const services: Service[] = [
       "Toplu yemek servisi yapan kuruluşlar, gıda fabrikaları ve depolama tesislerinde kullanılan büyük kapasiteli buzdolaplarının periyodik bakımını yapıyoruz. Elektrik devreleri, soğutma sistemi, nem kontrolü ve ısı yönetimi gibi karmaşık mekanizmaları profesyonelce yönetmekteyiz. Soğutma sisteminin verimliliğini artırmak için freon değişimi ve sistem temizliği hizmetleri sunuyoruz.",
     icon: "snowflake",
     category: "sogutma",
+    seoTitle: "Sanayi Tipi Buzdolabı Tamiri & Servisi İstanbul | 7/24",
+    seoDescription: "İstanbul'da sanayi tipi buzdolabı tamiri, sanayi buzdolabı servisi ve bakımı. Sanayi tipi buzdolabı tamircisi ekibimiz freon dolumu, kompresör ve soğutma arızalarında 7/24 hizmet sunuyor.",
+    seoKeywords: ["sanayi tipi buzdolabı servisi", "sanayi tipi buzdolabı tamiri", "sanayi tipi buzdolabı tamircisi", "sanayi buzdolabı bakımı", "sanayi buzdolabı arızası", "sanayi buzdolabı gaz dolumu", "İstanbul sanayi buzdolabı servisi"],
   },
   {
     id: "soguk-oda",
@@ -90,6 +114,9 @@ export const services: Service[] = [
       "Gıda depolaması ve saklama amacıyla kullanılan soğuk odaların soğutma sistemlerinin bakım, onarım ve sistem kontrol işlemlerini sunmaktayız. Soğuk oda duvarlarının yalıtımı, ısı sızıntıları, kompresör arızaları ve termostat sorunlarını çözüyoruz. Gıda güvenliği standartlarına uygun şekilde soğuk odaların sıcaklığını optimize ederiz ve enerji tasarrufu sağlarız.",
     icon: "snowflake",
     category: "sogutma",
+    seoTitle: "Soğuk Oda Tamiri & Servisi İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da soğuk oda tamiri, soğuk oda servisi ve bakımı. Soğuk oda tamircisi ekibimiz kompresör, yalıtım ve termostat arızalarında 7/24 acil müdahale hizmeti sunuyor.",
+    seoKeywords: ["soğuk oda servisi", "soğuk oda tamiri", "soğuk oda tamircisi", "soğuk oda bakımı", "soğuk oda arızası", "soğuk oda onarımı", "soğuk oda kurulumu", "İstanbul soğuk oda servisi"],
   },
   {
     id: "endust-bulasik",
@@ -97,9 +124,12 @@ export const services: Service[] = [
     slug: "endustriyel-bulasik-makinesi-servisi",
     shortDescription: "Toplu bulaşık yıkama makinelerinin bakım ve onarımı",
     description:
-      "Otel, lokanta ve toplu yemek servisi yapan işletmelerin yoğun kullanımına dayanacak şekilde imal edilen endüstriyel bulaşık makinelerinin bakım ve onarım hizmetlerini sunuyoruz. Spray vanası, yıkama pompası, kurutma sistemi ve elektronik kontrol paneli gibi bileşenlerin arızalarını giderilmekteyiz. Deterjan pompası, filtre sistemleri ve su ısıtıcılarının performansını kontrol edip optimize ederiz.",
+      "Otel, lokanta ve toplu yemek servisi yapan işletmelerin yoğun kullanımına dayanacak şekilde imal edilen endüstriyel bulaşık makinelerinin bakım ve onarım hizmetlerini sunuyoruz. Spray vanası, yıkama pompası, kurutma sistemi ve elektronik kontrol paneli gibi bileşenlerin arızalarını gideriyoruz. Deterjan pompası, filtre sistemleri ve su ısıtıcılarının performansını kontrol edip optimize ederiz.",
     icon: "droplet",
     category: "yikama",
+    seoTitle: "Endüstriyel Bulaşık Makinesi Tamiri & Servisi İstanbul | 7/24",
+    seoDescription: "İstanbul'da endüstriyel bulaşık makinesi tamiri, bulaşık makinesi servisi ve bakımı. Endüstriyel bulaşık makinesi tamircisi ekibimiz pompa, motor ve elektronik arızalarda 7/24 hizmet veriyor.",
+    seoKeywords: ["endüstriyel bulaşık makinesi servisi", "endüstriyel bulaşık makinesi tamiri", "endüstriyel bulaşık makinesi tamircisi", "bulaşık makinesi bakımı", "bulaşık makinesi arızası", "İstanbul endüstriyel bulaşık makinesi servisi"],
   },
   {
     id: "deterjan-parlatici",
@@ -110,6 +140,9 @@ export const services: Service[] = [
       "Endüstriyel bulaşık makinelerinde kullanılan deterjan ve parlatıcı dozaj pompalarının ayarlanması, bakımı ve onarımını gerçekleştirmekteyiz. Pompaların kapasitesi, iş ve boş çalışmalarının kontrolünü yaparak dozaj doğruluğunu garantiler. Kimyasal sızıntı sorunlarını gidermek ve pompaların uzun ömürlü çalışmasını sağlamak için düzenli bakım sunuyoruz.",
     icon: "droplets",
     category: "yikama",
+    seoTitle: "Deterjan Parlatıcı Pompası Tamiri & Servisi İstanbul | 7/24",
+    seoDescription: "İstanbul'da deterjan parlatıcı pompası tamiri, dozaj pompası servisi ve bakımı. Bulaşık makinesi kimyasal pompası tamircisi ekibimiz 7/24 profesyonel onarım hizmeti sunuyor.",
+    seoKeywords: ["deterjan pompası servisi", "deterjan pompası tamiri", "parlatıcı pompası tamircisi", "dozaj pompası bakımı", "deterjan pompası arızası", "İstanbul deterjan pompası servisi"],
   },
   {
     id: "gaz-kacagi",
@@ -120,6 +153,9 @@ export const services: Service[] = [
       "Endüstriyel mutfak ekipmanlarında ortaya çıkan doğal gaz ve LPG kaçaklarını profesyonel olarak tespit edip onarıyoruz. Gaz borusunda korozyon, bağlantı noktalarında gevşemeler veya ekipman hasarlarından kaynaklanan kaçakları bulamaç tekniklerle bulup sertifikalı şekilde onarırız. Güvenlik standartlarına uygun şekilde tüm gaz sisteminizi kontrol edip belgeleriz.",
     icon: "alert-triangle",
     category: "gaz",
+    seoTitle: "Gaz Kaçağı Tespiti & Tamiri İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da gaz kaçağı tespiti, gaz kaçağı tamiri ve onarımı. Profesyonel gaz kaçağı tamircisi ekibimiz LPG ve doğalgaz kaçaklarında 7/24 acil müdahale hizmeti sunuyor.",
+    seoKeywords: ["gaz kaçağı servisi", "gaz kaçağı tamiri", "gaz kaçağı tamircisi", "gaz kaçağı tespiti", "gaz kaçağı onarımı", "gaz tesisatçısı", "İstanbul gaz kaçağı servisi", "mutfak gaz kaçağı"],
   },
   {
     id: "dogalgaz-kacagi",
@@ -130,6 +166,9 @@ export const services: Service[] = [
       "Doğalgaz kaçaklarının tespit edilmesi çok kritiktir ve profesyonel müdahale gerektirmektedir. Ocak, fırın, benmari, frigider gibi gaz kullanan tüm ekipmanların bağlantılarında meydana gelen kaçakları tespit ediyoruz. Gazdan koku veren aletlerin bakım ve onarımını yaparak ve yeni bağlantı hatları döşeyerek güvenliğinizi artırırız.",
     icon: "alert-triangle",
     category: "gaz",
+    seoTitle: "Doğalgaz Kaçağı Tespiti & Tamiri İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da doğalgaz kaçağı tespiti, doğalgaz kaçağı tamiri ve acil onarım. Doğalgaz kaçağı tamircisi ekibimiz profesyonel cihazlarla 7/24 acil müdahale ve sertifikalı onarım hizmeti sunuyor.",
+    seoKeywords: ["doğalgaz kaçağı servisi", "doğalgaz kaçağı tamiri", "doğalgaz kaçağı tamircisi", "doğalgaz kaçağı tespiti", "doğalgaz tesisatçısı", "doğalgaz kaçağı onarımı", "İstanbul doğalgaz kaçağı servisi"],
   },
   {
     id: "pizza-firini",
@@ -140,6 +179,9 @@ export const services: Service[] = [
       "Geleneksel taş ve modern elektrikli pizza fırınlarının bakım, onarım ve periyodik kalibrasyonunu gerçekleştirmekteyiz. Isıtma sistemi, termostat, iç yüzey hasar ve kapı mühürlemesi gibi sorunları hızlı bir şekilde çözmekteyiz. Pizza fırının sıcaklık homojenliğini ve pişirme performansını artırmak için profesyonel ayarlamalar yapıyoruz.",
     icon: "flame",
     category: "pisirme",
+    seoTitle: "Pizza Fırını Tamiri & Servisi İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da pizza fırını tamiri, pizza fırını servisi ve bakımı. Pizza fırını tamircisi ekibimiz taş fırın ve elektrikli fırınlarda ısıtma, termostat arızalarında 7/24 hizmet sunuyor.",
+    seoKeywords: ["pizza fırını servisi", "pizza fırını tamiri", "pizza fırını tamircisi", "pizza fırını bakımı", "pizza fırını arızası", "taş fırın tamiri", "İstanbul pizza fırını servisi"],
   },
   {
     id: "konveksiyonel-firin",
@@ -150,6 +192,9 @@ export const services: Service[] = [
       "Eşit ısı dağıtımı sağlayan konveksiyonel fırınların fan motorları, hava yolları ve termostat sistemlerinin bakım onarımını yapmaktayız. Fırın içerisinde eşit pişirme sağlamak için hava akışını kontrol edip optimizasyon yapıyoruz. Elektrikli ve gazlı konveksiyonel fırınlarda ısıtma sistemi arızalarını tespit edip gidermekteyiz.",
     icon: "wind",
     category: "pisirme",
+    seoTitle: "Konveksiyonel Fırın Tamiri & Servisi İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da konveksiyonel fırın tamiri, konveksiyonel fırın servisi ve bakımı. Konveksiyonel fırın tamircisi ekibimiz fan motoru, hava sirkülasyonu ve termostat arızalarında 7/24 hizmet veriyor.",
+    seoKeywords: ["konveksiyonel fırın servisi", "konveksiyonel fırın tamiri", "konveksiyonel fırın tamircisi", "konveksiyonel fırın bakımı", "konveksiyonel fırın arızası", "İstanbul konveksiyonel fırın servisi"],
   },
   {
     id: "yer-ocagi",
@@ -157,9 +202,12 @@ export const services: Service[] = [
     slug: "yer-ocagi-servisi",
     shortDescription: "Yer ocaklarının ısıtma sistemi bakımı ve onarımı",
     description:
-      "Zemin veya alt seviyelere monte edilen yer ocaklarının bakım, onarım ve gaz sistemi kontrol işlemlerini gerçekleştirmekteyiz. Yer ocaklarının yangın tasarım ücreti, hava yönetimi ve atık gaz yönetimi gibi özel gereksinimlerini karşılamaktayız. Korozi ve nem sorunlarına karşı iş hayatı uzun tutulan yer ocaklarının güvenli çalışmasını garantilemekteyiz.",
+      "Zemin veya alt seviyelere monte edilen yer ocaklarının bakım, onarım ve gaz sistemi kontrol işlemlerini gerçekleştirmekteyiz. Yer ocaklarının yangın güvenliği, hava yönetimi ve atık gaz yönetimi gibi özel gereksinimlerini karşılamaktayız. Korozyon ve nem sorunlarına karşı yer ocaklarının güvenli ve uzun ömürlü çalışmasını garantilemekteyiz.",
     icon: "flame",
     category: "pisirme",
+    seoTitle: "Yer Ocağı Tamiri & Servisi İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da yer ocağı tamiri, yer ocağı servisi ve bakımı. Profesyonel yer ocağı tamircisi ekibimiz gaz sistemi, ısıtma ve korozyon arızalarında 7/24 acil müdahale hizmeti sunuyor.",
+    seoKeywords: ["yer ocağı servisi", "yer ocağı tamiri", "yer ocağı tamircisi", "yer ocağı bakımı", "yer ocağı arızası", "yer ocağı onarımı", "yer ocağı ustası", "İstanbul yer ocağı servisi"],
   },
   {
     id: "yemekhane-ocagi",
@@ -167,9 +215,12 @@ export const services: Service[] = [
     slug: "yemekhane-ocagi-servisi",
     shortDescription: "Toplu yemek servisi için ocak bakım ve onarım",
     description:
-      "Asker, okul, hastane gibi toplu yemek pişirilen yerlerde kullanılan büyük kapasiteli yemekhane ocaklarının periyodik bakımını sunmaktayız. Çok gözlü ocaklarda tek tek gözlerin ısıtma performansını kontrol edip dengelemekteyiz. Gaz kaçağı, tesisat sorunları ve ısıtma sistemi arızalarında 24/7 acil destek sağlıyoruz.",
+      "Asker, okul, hastane gibi toplu yemek pişirilen yerlerde kullanılan büyük kapasiteli yemekhane ocaklarının periyodik bakımını sunmaktayız. Çok gözlü ocaklarda tek tek gözlerin ısıtma performansını kontrol edip dengelemekteyiz. Gaz kaçağı, tesisat sorunları ve ısıtma sistemi arızalarında 7/24 acil destek sağlıyoruz.",
     icon: "flame",
     category: "pisirme",
+    seoTitle: "Yemekhane Ocağı Tamiri & Servisi İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da yemekhane ocağı tamiri, yemekhane ocağı servisi ve bakımı. Yemekhane ocağı tamircisi ekibimiz okul, hastane ve kışla mutfaklarında 7/24 acil onarım hizmeti sunuyor.",
+    seoKeywords: ["yemekhane ocağı servisi", "yemekhane ocağı tamiri", "yemekhane ocağı tamircisi", "yemekhane ocağı bakımı", "yemekhane ocağı arızası", "yemekhane ocağı onarımı", "İstanbul yemekhane ocağı servisi"],
   },
   {
     id: "lokanta-ocagi",
@@ -177,9 +228,12 @@ export const services: Service[] = [
     slug: "lokanta-ocagi-servisi",
     shortDescription: "Restoran mutfakları için profesyonel ocak bakımı",
     description:
-      "Lokanta ve restaurant mutfaklarında yoğun kullanılan gazlı ocakların bakım, onarım ve ısıtma performans kontrol işlemlerini yapıyoruz. Ocak yüzeyi, göz elemanları, gaz vanası ve üniversal tesisat bağlantılarında meydana gelen sorunları çözmekteyiz. Düzenli bakım programları ile ocaklarınızın ömrünü uzatır ve verimli çalışmasını sağlarız.",
+      "Lokanta ve restoran mutfaklarında yoğun kullanılan gazlı ocakların bakım, onarım ve ısıtma performans kontrol işlemlerini yapıyoruz. Ocak yüzeyi, göz elemanları, gaz vanası ve tesisat bağlantılarında meydana gelen sorunları çözmekteyiz. Düzenli bakım programları ile ocaklarınızın ömrünü uzatır ve verimli çalışmasını sağlarız.",
     icon: "flame",
     category: "pisirme",
+    seoTitle: "Lokanta Ocağı Tamiri & Servisi İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da lokanta ocağı tamiri, lokanta ocağı servisi ve bakımı. Lokanta ocağı tamircisi ekibimiz restoran ve lokanta mutfaklarında 7/24 profesyonel onarım hizmeti sunuyor.",
+    seoKeywords: ["lokanta ocağı servisi", "lokanta ocağı tamiri", "lokanta ocağı tamircisi", "lokanta ocağı bakımı", "lokanta ocağı arızası", "lokanta ocağı onarımı", "restoran ocak tamiri", "İstanbul lokanta ocağı servisi"],
   },
   {
     id: "sanayi-ocak",
@@ -190,5 +244,8 @@ export const services: Service[] = [
       "Fabrika, gıda işletmesi ve sanayi mutfaklarında kullanılan ağır yükümlü sanayi tipi ocakların bakım, onarım ve gaz sistemi kontrolünü profesyonel bir şekilde sunmaktayız. Çok gözlü ve yüksek kapasiteli ocakların her bir gözünün bağımsız ısıtma performansını dengelemekteyiz. Gaz alt yapısı, bağlantı noktaları ve yanma sisteminin güvenli çalışmasını garantilemekteyiz.",
     icon: "flame",
     category: "pisirme",
+    seoTitle: "Sanayi Tipi Ocak Tamiri & Servisi İstanbul | 7/24 Acil Müdahale",
+    seoDescription: "İstanbul'da sanayi tipi ocak tamiri, sanayi ocağı servisi ve bakımı. Sanayi tipi ocak tamircisi ekibimiz fabrika ve gıda işletmelerinde 7/24 profesyonel onarım hizmeti sunuyor.",
+    seoKeywords: ["sanayi tipi ocak servisi", "sanayi tipi ocak tamiri", "sanayi tipi ocak tamircisi", "sanayi ocağı bakımı", "sanayi ocağı arızası", "sanayi ocağı onarımı", "İstanbul sanayi ocak servisi"],
   },
 ];

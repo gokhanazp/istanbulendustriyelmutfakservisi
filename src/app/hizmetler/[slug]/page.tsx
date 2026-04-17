@@ -49,18 +49,22 @@ export async function generateMetadata(
     return { title: "Hizmet Bulunamadı" };
   }
 
+  const title = service.seoTitle || `${service.name} | İstanbul Endüstriyel Mutfak Servisi`;
+  const description = service.seoDescription || service.shortDescription;
+  const keywords = service.seoKeywords || [
+    service.name,
+    "Endüstriyel mutfak servisi",
+    "İstanbul",
+    service.category,
+  ];
+
   return {
-    title: `${service.name} | İstanbul Endüstriyel Mutfak Servisi`,
-    description: service.shortDescription,
-    keywords: [
-      service.name,
-      "Endüstriyel mutfak servisi",
-      "İstanbul",
-      service.category,
-    ],
+    title,
+    description,
+    keywords,
     openGraph: {
-      title: `${service.name} | İstanbul Endüstriyel Mutfak Servisi`,
-      description: service.shortDescription,
+      title,
+      description,
       url: `https://istanbulendustriyelmutfakservisi.com/hizmetler/${service.slug}`,
       siteName: "İstanbul Endüstriyel Mutfak Servisi",
       locale: "tr_TR",

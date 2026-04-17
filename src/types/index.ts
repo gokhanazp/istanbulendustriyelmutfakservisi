@@ -16,6 +16,9 @@ export interface Service {
   description: string;
   icon: string;
   category: "pisirme" | "sogutma" | "yikama" | "gaz" | "diger";
+  seoTitle?: string;
+  seoDescription?: string;
+  seoKeywords?: string[];
 }
 
 export interface Region {
