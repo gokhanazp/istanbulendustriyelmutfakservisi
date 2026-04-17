@@ -9,32 +9,32 @@ const slides = [
     subtitle: "Aynı Gün Müdahale — 7/24 Teknik Destek",
     description:
       "Lokantalar, oteller, kafeler ve yemekhaneler için endüstriyel mutfak ekipmanlarınızın bakım, onarım ve arıza giderme hizmetleri.",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=80&auto=format",
-    overlay: "from-slate-900/90 via-slate-900/70 to-slate-900/40",
+    image: "/endustriyel-mutfak-malzemeleri-banner.jpg",
+    overlay: "from-slate-900/85 via-slate-900/60 to-slate-900/30",
   },
   {
     title: "Profesyonel Ocak & Fırın Servisi",
     subtitle: "24 Marka — Orijinal Yedek Parça",
     description:
       "Endüstriyel ocak, fırın, ızgara ve fritöz arızalarınızda uzman teknik ekibimiz ile yanınızdayız. Tüm markalar için servis hizmeti.",
-    image: "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?w=1920&q=80&auto=format",
-    overlay: "from-slate-900/90 via-slate-900/70 to-slate-900/40",
+    image: "/slider-ocak-firin-servisi.jpg",
+    overlay: "from-slate-900/70 via-slate-900/40 to-transparent",
   },
   {
     title: "Endüstriyel Soğutma Sistemleri",
     subtitle: "Buzdolabı — Soğuk Oda — Derin Dondurucu",
     description:
       "Sanayi tipi buzdolabı, soğuk oda ve derin dondurucu servisinde İstanbul genelinde hızlı ve güvenilir çözümler.",
-    image: "https://images.unsplash.com/photo-1621600411688-4be93cd68504?w=1920&q=80&auto=format",
-    overlay: "from-slate-900/90 via-slate-900/75 to-slate-900/50",
+    image: "/endustriyel-sogutma-sistemleri-banner.jpg",
+    overlay: "from-slate-900/85 via-slate-900/60 to-slate-900/30",
   },
   {
     title: "Gaz Kaçağı Tespit & Onarım",
     subtitle: "Acil Müdahale Ekibi — Güvenliğiniz Önceliğimiz",
     description:
       "Doğalgaz ve LPG kaçaklarında acil müdahale. Profesyonel ekipmanlarla tespit, onarım ve güvenlik sertifikası hizmeti.",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80&auto=format",
-    overlay: "from-slate-900/90 via-slate-900/75 to-slate-900/45",
+    image: "/dogalgaz-kacagi-tespit.jpg",
+    overlay: "from-slate-900/85 via-slate-900/60 to-slate-900/30",
   },
 ];
 
@@ -121,14 +121,14 @@ export function HeroSection() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 animate-[fadeInUp_0.6s_ease-out_0.3s_both]">
                 <a
-                  href="tel:02121234567"
+                  href="tel:+905013001981"
                   className="group flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white font-bold text-lg rounded-2xl shadow-lg shadow-orange-900/30 hover:shadow-xl transition-all"
                 >
                   <Phone className="w-5 h-5 group-hover:animate-bounce" />
                   Hemen Ara
                 </a>
                 <a
-                  href="https://wa.me/905321234567?text=Merhaba%2C%20endüstriyel%20mutfak%20ekipmanlarım%20için%20servis%20hizmeti%20almak%20istiyorum."
+                  href="https://wa.me/905013001981?text=Merhaba%2C%20endüstriyel%20mutfak%20ekipmanlarım%20için%20servis%20hizmeti%20almak%20istiyorum."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold text-lg rounded-2xl border border-white/20 hover:border-white/40 transition-all"

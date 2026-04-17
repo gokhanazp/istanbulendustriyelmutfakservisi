@@ -122,10 +122,10 @@ export default function FAQPage() {
                 Doğrudan ekibimiz ile iletişime geçebilirsiniz
               </p>
               <a
-                href="tel:02121234567"
+                href="tel:+905013001981"
                 className="inline-flex items-center justify-center gap-2 px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition-colors"
               >
-                Ara: 0212 XXX XX XX
+                Ara: 0501 300 19 81
               </a>
             </div>
 
@@ -138,12 +138,12 @@ export default function FAQPage() {
                 7/24 hızlı yanıt için WhatsApp tercih edin
               </p>
               <a
-                href="https://wa.me/905321234567?text=Merhaba%2C%20endüstriyel%20mutfak%20ekipmanlarım%20için%20servis%20hizmeti%20almak%20istiyorum."
+                href="https://wa.me/905013001981?text=Merhaba%2C%20endüstriyel%20mutfak%20ekipmanlarım%20için%20servis%20hizmeti%20almak%20istiyorum."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-colors"
               >
-                WhatsApp: 0532 XXX XX XX
+                WhatsApp: 0501 300 19 81
               </a>
             </div>
 

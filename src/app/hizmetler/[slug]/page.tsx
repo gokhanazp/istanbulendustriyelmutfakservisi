@@ -195,7 +195,7 @@ export default async function ServiceDetailPage(
     },
     {
       question: "Acil durumlarda hizmet almak için ne yapmalıyım?",
-      answer: "Acil durumlarda, 0212 XXX XX XX numarasını arayarak veya WhatsApp üzerinden iletişime geçebilirsiniz. 24/7 destek hattımız sizin sorunlarınızı en kısa sürede çözmek için hazırdır. Ortalama yanıt süresi 30 dakikadır.",
+      answer: "Acil durumlarda, 0501 300 19 81 numarasını arayarak veya WhatsApp üzerinden iletişime geçebilirsiniz. 24/7 destek hattımız sizin sorunlarınızı en kısa sürede çözmek için hazırdır. Ortalama yanıt süresi 30 dakikadır.",
     },
     {
       question: `${service.name} için garanti süresi nedir?`,
@@ -244,14 +244,14 @@ export default async function ServiceDetailPage(
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="tel:+902121234567"
+                  href="tel:+905013001981"
                   className="inline-flex items-center gap-2 px-6 py-3.5 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-xl"
                 >
                   <Phone className="w-5 h-5" />
                   Hemen Ara
                 </a>
                 <a
-                  href="https://wa.me/905001234567"
+                  href="https://wa.me/905013001981"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3.5 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-xl"
@@ -374,14 +374,14 @@ export default async function ServiceDetailPage(
                 </p>
                 <div className="space-y-3">
                   <a
-                    href="tel:+902121234567"
+                    href="tel:+905013001981"
                     className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-xl transition-all text-sm"
                   >
                     <Phone className="w-4 h-4" />
-                    0212 XXX XX XX
+                    0501 300 19 81
                   </a>
                   <a
-                    href="https://wa.me/905001234567"
+                    href="https://wa.me/905013001981"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-all text-sm"

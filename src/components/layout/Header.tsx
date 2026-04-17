@@ -21,6 +21,9 @@ export function Header() {
       items: [
         { name: "Endüstriyel Ocak Servisi", href: "/hizmetler/endustriyel-ocak-servisi" },
         { name: "Endüstriyel Fırın Servisi", href: "/hizmetler/endustriyel-firin-servisi" },
+        { name: "Yemekhane Ocağı Servisi", href: "/hizmetler/yemekhane-ocagi-servisi" },
+        { name: "Lokanta Ocağı Servisi", href: "/hizmetler/lokanta-ocagi-servisi" },
+        { name: "Yer Ocağı Servisi", href: "/hizmetler/yer-ocagi-servisi" },
         { name: "Izgara Servisi", href: "/hizmetler/izgara-servisi" },
         { name: "Fritöz Servisi", href: "/hizmetler/fritoz-servisi" },
         { name: "Pizza Fırını Servisi", href: "/hizmetler/pizza-firini-servisi" },
@@ -66,18 +69,14 @@ export function Header() {
               </div>
             </div>
             <div className="flex items-center gap-5">
-              <a href="tel:02121234567" className="flex items-center gap-1.5 hover:text-white">
-                <Phone className="w-3.5 h-3.5" />
-                <span>0212 XXX XX XX</span>
-              </a>
               <a
-                href="https://wa.me/905321234567"
+                href="https://wa.me/905013001981"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-green-400 hover:text-green-300"
               >
                 <MessageCircle className="w-3.5 h-3.5" />
-                <span>0532 XXX XX XX</span>
+                <span>0501 300 19 81 (WhatsApp)</span>
               </a>
             </div>
           </div>
@@ -125,7 +124,7 @@ export function Header() {
                   <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
                 </button>
                 <div className="absolute left-1/2 -translate-x-1/2 mt-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 w-[640px]">
+                  <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 w-[720px]">
                     <div className="grid grid-cols-3 gap-6">
                       {serviceCategories.map((cat) => (
                         <div key={cat.label}>
@@ -174,7 +173,7 @@ export function Header() {
             {/* CTA Buttons - Desktop */}
             <div className="hidden xl:flex items-center gap-3">
               <a
-                href="https://wa.me/905321234567"
+                href="https://wa.me/905013001981"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2.5 bg-green-500 hover:bg-green-600 text-white text-sm font-semibold rounded-xl transition-all shadow-md hover:shadow-lg"
@@ -183,7 +182,7 @@ export function Header() {
                 WhatsApp
               </a>
               <a
-                href="tel:02121234567"
+                href="tel:+905013001981"
                 className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white text-sm font-bold rounded-xl transition-all shadow-md hover:shadow-lg"
               >
                 <Phone className="w-4 h-4" />
@@ -258,7 +257,7 @@ export function Header() {
               {/* Mobile CTAs */}
               <div className="pt-4 space-y-3 border-t border-slate-100 mt-3">
                 <a
-                  href="tel:02121234567"
+                  href="tel:+905013001981"
                   className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-gradient-to-r from-orange-600 to-orange-700 text-white font-bold rounded-xl shadow-md"
                   onClick={closeMobileMenu}
                 >
@@ -266,7 +265,7 @@ export function Header() {
                   Hemen Ara
                 </a>
                 <a
-                  href="https://wa.me/905321234567"
+                  href="https://wa.me/905013001981"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-green-500 text-white font-bold rounded-xl shadow-md"

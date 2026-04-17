@@ -46,18 +46,18 @@ export function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <a
-                href="tel:02121234567"
+                href="tel:+905013001981"
                 className="flex items-center gap-2 text-slate-300 hover:text-orange-500 transition-colors"
               >
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span className="text-sm">0212 XXX XX XX</span>
+                <span className="text-sm">0501 300 19 81</span>
               </a>
               <a
-                href="https://wa.me/905321234567"
+                href="https://wa.me/905013001981"
                 className="flex items-center gap-2 text-slate-300 hover:text-orange-500 transition-colors"
               >
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span className="text-sm">0532 XXX XX XX (WhatsApp)</span>
+                <span className="text-sm">0501 300 19 81 (WhatsApp)</span>
               </a>
               <div className="flex items-start gap-2 text-slate-300">
                 <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />

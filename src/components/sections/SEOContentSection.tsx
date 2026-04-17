@@ -73,7 +73,7 @@ export function SEOContentSection() {
               WhatsApp veya web formu aracılığıyla hızlıca talebi alabiliriz.
             </p>
             <a
-              href="tel:02121234567"
+              href="tel:+905013001981"
               className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 font-semibold"
             >
               Acil Destek Çağrısı Yap

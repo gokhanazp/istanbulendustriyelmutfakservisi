@@ -204,10 +204,10 @@ export default function RegionsPage() {
             alın.
           </p>
           <a
-            href="tel:02121234567"
+            href="tel:+905013001981"
             className="inline-block px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors shadow-lg"
           >
-            Acil Servis İçin Ara: 0212 XXX XX XX
+            Acil Servis İçin Ara: 0501 300 19 81
           </a>
         </section>
       </main>

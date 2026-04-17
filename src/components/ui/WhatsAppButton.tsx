@@ -4,7 +4,7 @@ import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 
 export function WhatsAppButton() {
-  const whatsappNumber = "905321234567";
+  const whatsappNumber = "905013001981";
   const message = encodeURIComponent(
     "Merhaba, endüstriyel mutfak ekipmanlarım için servis hizmeti almak istiyorum."
   );

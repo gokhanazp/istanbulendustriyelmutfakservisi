@@ -136,7 +136,7 @@ export function ContactForm() {
             onChange={handleChange}
             required
             className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
-            placeholder="0532 XXX XX XX"
+            placeholder="0501 300 19 81"
           />
         </div>
       </div>

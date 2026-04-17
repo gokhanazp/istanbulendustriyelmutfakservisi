@@ -33,7 +33,7 @@ export function ContactCTASection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
             {/* Phone Button - Orange Gradient */}
             <a
-              href="tel:02121234567"
+              href="tel:+905013001981"
               className="group relative px-8 md:px-10 py-4 md:py-5 text-white font-bold text-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/30"
             >
               {/* Gradient background */}
@@ -48,7 +48,7 @@ export function ContactCTASection() {
 
             {/* WhatsApp Button - Green Gradient */}
             <a
-              href="https://wa.me/905321234567?text=Merhaba%2C%20endüstriyel%20mutfak%20ekipmanlarım%20için%20servis%20hizmeti%20almak%20istiyorum."
+              href="https://wa.me/905013001981?text=Merhaba%2C%20endüstriyel%20mutfak%20ekipmanlarım%20için%20servis%20hizmeti%20almak%20istiyorum."
               target="_blank"
               rel="noopener noreferrer"
               className="group relative px-8 md:px-10 py-4 md:py-5 text-white font-bold text-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/30"
