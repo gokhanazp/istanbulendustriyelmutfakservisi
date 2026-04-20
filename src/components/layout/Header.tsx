@@ -32,6 +32,7 @@ export function Header() {
     {
       label: "Soğutma Ekipmanları",
       items: [
+        { name: "Buzdolabı Servisi", href: "/hizmetler/buzdolabi-servisi" },
         { name: "Endüstriyel Buzdolabı Servisi", href: "/hizmetler/endustriyel-buzdolabi-servisi" },
         { name: "Soğuk Oda Servisi", href: "/hizmetler/soguk-oda-servisi" },
         { name: "Soğuk Hava Deposu Servisi", href: "/hizmetler/soguk-hava-deposu-servisi" },
@@ -176,6 +177,9 @@ export function Header() {
               <Link href="/bolgeler" className="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-orange-600 rounded-lg hover:bg-orange-50 transition-all">
                 Bölgeler
               </Link>
+              <Link href="/blog" className="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-orange-600 rounded-lg hover:bg-orange-50 transition-all">
+                Blog
+              </Link>
               <Link href="/iletisim" className="px-4 py-2 text-sm font-semibold text-slate-700 hover:text-orange-600 rounded-lg hover:bg-orange-50 transition-all">
                 İletişim
               </Link>
@@ -260,6 +264,9 @@ export function Header() {
               </Link>
               <Link href="/bolgeler" className="block px-4 py-3 text-sm font-semibold text-slate-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg" onClick={closeMobileMenu}>
                 Bölgeler
+              </Link>
+              <Link href="/blog" className="block px-4 py-3 text-sm font-semibold text-slate-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg" onClick={closeMobileMenu}>
+                Blog
               </Link>
               <Link href="/iletisim" className="block px-4 py-3 text-sm font-semibold text-slate-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg" onClick={closeMobileMenu}>
                 İletişim

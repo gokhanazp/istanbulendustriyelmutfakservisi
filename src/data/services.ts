@@ -391,4 +391,17 @@ export const services: Service[] = [
     seoDescription: "İstanbul'da soğuk hava deposu tamiri, soğuk hava deposu servisi ve bakımı. Soğuk hava tamircisi ekibimiz depo soğutma sistemi arızalarında 7/24 acil müdahale hizmeti sunuyor.",
     seoKeywords: ["soğuk hava deposu servisi", "soğuk hava deposu tamiri", "soğuk hava deposu tamircisi", "soğuk hava bakımı", "soğuk hava arızası", "soğuk hava deposu onarımı", "İstanbul soğuk hava deposu servisi"],
   },
+  {
+    id: "buzdolabi-genel",
+    name: "Buzdolabı Servisi",
+    slug: "buzdolabi-servisi",
+    shortDescription: "Her marka ve model buzdolabı için profesyonel tamir ve bakım hizmetleri",
+    description:
+      "İstanbul genelinde her marka ve model buzdolabı için profesyonel servis, tamir ve bakım hizmetleri sunuyoruz. Buzdolabınız soğutmuyor mu, ses yapıyor mu, su sızdırıyor mu veya buzlanma sorunu mu var? Deneyimli buzdolabı tamircisi ekibimiz kompresör arızası, gaz kaçağı, termostat bozukluğu, fan motoru arızası, kapı contası değişimi ve elektronik kart tamiri gibi tüm sorunları aynı gün çözüme kavuşturuyor. Ev tipi, ticari ve endüstriyel buzdolabı tamiri konusunda uzman kadromuz orijinal yedek parçalar kullanarak buzdolabınızın ömrünü uzatır. İstanbul'un tüm ilçelerine 7/24 acil buzdolabı servisi hizmeti veriyoruz.",
+    icon: "snowflake",
+    category: "sogutma",
+    seoTitle: "Buzdolabı Tamiri & Servisi İstanbul | Buzdolabı Tamircisi 7/24",
+    seoDescription: "İstanbul'da buzdolabı tamiri, buzdolabı servisi ve buzdolabı tamircisi hizmeti. Buzdolabı tamir, buzdolabı servis, buzdolabı bakımı ve arıza onarımında 7/24 aynı gün müdahale. Her marka buzdolabı ustası.",
+    seoKeywords: ["buzdolabı servis", "buzdolabı servisi", "buzdolabı tamir", "buzdolabı tamiri", "buzdolabı tamircisi", "buzdolabı bakımı", "buzdolabı arızası", "buzdolabı onarımı", "buzdolabı ustası", "buzdolabı teknik servis", "buzdolabı gaz dolumu", "buzdolabı kompresör tamiri", "buzdolabı soğutmuyor", "buzdolabı buzlanma", "İstanbul buzdolabı servisi", "İstanbul buzdolabı tamiri", "İstanbul buzdolabı tamircisi", "buzdolabı tamir ücreti", "buzdolabı servisi İstanbul", "buzdolabı tamircisi İstanbul"],
+  },
 ];

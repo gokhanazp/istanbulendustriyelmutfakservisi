@@ -39,3 +39,18 @@ export interface ContactFormData {
   subject: string;
   message: string;
 }
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  category: string;
+  tags: string[];
+  relatedService?: string;
+  publishDate: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  seoKeywords?: string[];
+}
