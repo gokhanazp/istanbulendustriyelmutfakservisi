@@ -30,10 +30,21 @@ export function Header() {
       ],
     },
     {
-      label: "Soğutma & Yıkama",
+      label: "Soğutma Ekipmanları",
       items: [
         { name: "Endüstriyel Buzdolabı Servisi", href: "/hizmetler/endustriyel-buzdolabi-servisi" },
         { name: "Soğuk Oda Servisi", href: "/hizmetler/soguk-oda-servisi" },
+        { name: "Soğuk Hava Deposu Servisi", href: "/hizmetler/soguk-hava-deposu-servisi" },
+        { name: "Et Dolabı Servisi", href: "/hizmetler/et-dolabi-servisi" },
+        { name: "Pasta Dolabı Servisi", href: "/hizmetler/pasta-dolabi-servisi" },
+        { name: "Şarküteri Dolabı Servisi", href: "/hizmetler/sarkuteri-dolabi-servisi" },
+        { name: "Market Dolabı Servisi", href: "/hizmetler/market-dolabi-servisi" },
+        { name: "Meşrubat Dolabı Servisi", href: "/hizmetler/mesrubat-dolabi-servisi" },
+      ],
+    },
+    {
+      label: "Yıkama & Diğer",
+      items: [
         { name: "Bulaşık Makinesi Servisi", href: "/hizmetler/endustriyel-bulasik-makinesi-servisi" },
       ],
     },
@@ -124,8 +135,8 @@ export function Header() {
                   <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
                 </button>
                 <div className="absolute left-1/2 -translate-x-1/2 mt-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 w-[720px]">
-                    <div className="grid grid-cols-3 gap-6">
+                  <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 w-[860px]">
+                    <div className="grid grid-cols-4 gap-6">
                       {serviceCategories.map((cat) => (
                         <div key={cat.label}>
                           <h3 className="text-xs font-bold text-orange-600 uppercase tracking-wider mb-3">
