@@ -1,4 +1,3 @@
-# Arama Motorları - Tam Erişim
 User-agent: Googlebot
 Allow: /
 
@@ -8,7 +7,6 @@ Allow: /
 User-agent: Yandex
 Allow: /
 
-# AI Asistanlar - İçerik Okuma İzni (müşteriler AI ile arama yapıyor)
 User-agent: ChatGPT-User
 Allow: /
 
@@ -27,7 +25,6 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# Gereksiz Crawlerlar - Engelle (sunucu yükü azaltır)
 User-agent: AhrefsBot
 Disallow: /
 
@@ -43,7 +40,6 @@ Disallow: /
 User-agent: BLEXBot
 Disallow: /
 
-# Diğer Tüm Botlar - Genel Erişim
 User-agent: *
 Allow: /
 Disallow: /api/
