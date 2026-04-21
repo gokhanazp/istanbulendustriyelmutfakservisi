@@ -49,6 +49,7 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-site-verification" content="emNS2QGgf2yupvBGHNFprOp5q1-o6yezfqPkPT7aDAc" />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="font-sans bg-white text-slate-900 antialiased">
