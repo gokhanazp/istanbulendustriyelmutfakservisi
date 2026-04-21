@@ -404,4 +404,17 @@ export const services: Service[] = [
     seoDescription: "İstanbul'da buzdolabı tamiri, buzdolabı servisi ve buzdolabı tamircisi hizmeti. Buzdolabı tamir, buzdolabı servis, buzdolabı bakımı ve arıza onarımında 7/24 aynı gün müdahale. Her marka buzdolabı ustası.",
     seoKeywords: ["buzdolabı servis", "buzdolabı servisi", "buzdolabı tamir", "buzdolabı tamiri", "buzdolabı tamircisi", "buzdolabı bakımı", "buzdolabı arızası", "buzdolabı onarımı", "buzdolabı ustası", "buzdolabı teknik servis", "buzdolabı gaz dolumu", "buzdolabı kompresör tamiri", "buzdolabı soğutmuyor", "buzdolabı buzlanma", "İstanbul buzdolabı servisi", "İstanbul buzdolabı tamiri", "İstanbul buzdolabı tamircisi", "buzdolabı tamir ücreti", "buzdolabı servisi İstanbul", "buzdolabı tamircisi İstanbul"],
   },
+  {
+    id: "buzdolabi-gaz-kacagi",
+    name: "Buzdolabı Gaz Kaçağı Servisi",
+    slug: "buzdolabi-gaz-kacagi-servisi",
+    shortDescription: "Buzdolabı soğutucu gaz kaçağı tespiti, onarımı ve gaz dolumu hizmetleri",
+    description:
+      "Buzdolabınız eskisi gibi soğutmuyor mu veya hiç soğutmuyorsa soğutucu gaz kaçağı olabilir. Buzdolabı gaz kaçağı, en sık karşılaşılan ve acil müdahale gerektiren arızalardan biridir. Gaz kaçağı tespit edilmezse kompresör aşırı çalışarak yanar ve çok daha maliyetli bir tamire yol açar. Uzman ekibimiz özel gaz kaçak dedektörleri ile kaçak noktasını hassas şekilde tespit eder, lehimleme ile onarır ve ardından freon (R134a, R600a, R404a) dolumu yaparak buzdolabınızı eski performansına kavuşturur. Endüstriyel buzdolabı, ticari soğutucu, ev tipi buzdolabı ve derin dondurucu dahil tüm soğutma cihazlarında gaz kaçağı tamiri ve gaz dolumu hizmeti veriyoruz. İstanbul genelinde 7/24 acil gaz kaçağı servisi ile aynı gün müdahale garantisi sunuyoruz.",
+    icon: "wind",
+    category: "sogutma",
+    seoTitle: "Buzdolabı Gaz Kaçağı Servisi İstanbul | Gaz Dolumu & Tamiri 7/24",
+    seoDescription: "İstanbul'da buzdolabı gaz kaçağı tespiti, buzdolabı gaz dolumu ve onarım servisi. Buzdolabı gaz kaçağı tamiri, buzdolabı freon dolumu, buzdolabı soğutmuyor sorunu için 7/24 acil müdahale.",
+    seoKeywords: ["buzdolabı gaz kaçağı", "buzdolabı gaz kaçağı servisi", "buzdolabı gaz kaçağı tamiri", "buzdolabı gaz dolumu", "buzdolabı freon dolumu", "buzdolabı gaz dolum ücreti", "buzdolabı soğutmuyor gaz", "buzdolabı gaz kaçağı tespiti", "buzdolabı gaz basma", "buzdolabı gaz şarjı", "buzdolabı soğutucu gaz", "endüstriyel buzdolabı gaz dolumu", "İstanbul buzdolabı gaz dolumu", "İstanbul buzdolabı gaz kaçağı", "İstanbul buzdolabı gaz kaçağı tamircisi", "buzdolabı gaz kaçağı ücreti"],
+  },
 ];

@@ -424,4 +424,25 @@ export const brands: Brand[] = [
       "parlatici-pompasi",
     ],
   },
+  {
+    id: "halsan",
+    name: "Halsan",
+    slug: "halsan-servisi",
+    logo: "/markalarimiz/halsan.png",
+    description:
+      "Halsan, endüstriyel mutfak ekipmanlarında Türkiye'nin köklü üreticilerinden biridir. Halsan ocak, fırın, izgara, fritöz ve buzdolabı gibi ürünlerinin bakım onarımını profesyonel ekibimizle gerçekleştirmekteyiz. Gaz kaçağı tespiti, benmari servisi ve pompası bakımı dahil tüm Halsan ekipmanlarınız için 7/24 teknik destek sunuyoruz.",
+    services: [
+      "ocak",
+      "firin",
+      "izgara",
+      "buzdolabi",
+      "gaz-kacagi",
+      "fritoz",
+      "makarna-haslama",
+      "benmari",
+      "dogalgaz-kacagi",
+      "deterjan-pompasi",
+      "parlatici-pompasi",
+    ],
+  },
 ];
