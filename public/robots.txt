@@ -1,3 +1,9 @@
+# Genel erisim
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Arama motorlari (tam erisim)
 User-agent: Googlebot
 Allow: /
 
@@ -7,24 +13,33 @@ Allow: /
 User-agent: Yandex
 Allow: /
 
+# AI Asistanlar (arama / kullanici erisimi)
 User-agent: ChatGPT-User
-Allow: /
-
-User-agent: GPTBot
-Allow: /
-
-User-agent: Google-Extended
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
+# AI Training Botlari (engelle)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
 User-agent: ClaudeBot
-Allow: /
+Disallow: /
 
 User-agent: Applebot-Extended
-Allow: /
+Disallow: /
 
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# Gereksiz SEO crawlerlar (sunucu yuku)
 User-agent: AhrefsBot
 Disallow: /
 
@@ -40,8 +55,11 @@ Disallow: /
 User-agent: BLEXBot
 Disallow: /
 
-User-agent: *
-Allow: /
-Disallow: /api/
+# Diger agresif crawlerlar
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
 
 Sitemap: https://istanbulendustriyelmutfakservisi.com/sitemap.xml
