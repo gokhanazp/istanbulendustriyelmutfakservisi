@@ -1,4 +1,51 @@
+# Arama Motorları - Tam Erişim
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# AI Asistanlar - İçerik Okuma İzni (müşteriler AI ile arama yapıyor)
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Gereksiz Crawlerlar - Engelle (sunucu yükü azaltır)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# Diğer Tüm Botlar - Genel Erişim
 User-agent: *
 Allow: /
+Disallow: /api/
 
 Sitemap: https://istanbulendustriyelmutfakservisi.com/sitemap.xml
