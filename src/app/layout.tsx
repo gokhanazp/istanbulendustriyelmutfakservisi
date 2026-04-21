@@ -6,10 +6,6 @@ import { CallButton } from "@/components/ui/CallButton";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  robots: {
-    index: false,
-    follow: false,
-  },
   metadataBase: new URL("https://istanbulendustriyelmutfakservisi.com"),
   title: "İstanbul Endüstriyel Mutfak Servisi | 7/24 Teknik Destek",
   description:

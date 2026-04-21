@@ -8,7 +8,7 @@ export const brands: Brand[] = [
     logo: "/markalarimiz/frenox.png",
     description:
       "Frenox markası endüstriyel soğutma ekipmanlarında uzmanlaşmış bir üreticidir. Frenox buzdolaplarının servisinde deneyimli teknisyenlerimiz, soğutma performansını optimal seviyede tutmak için bakım ve onarım hizmetleri sunmaktadır. Soğutma sistemi arızalarında hızlı ve etkili çözümler sağlarız.",
-    services: ["buzdolabi"],
+    services: ["buzdolabi", "bulasik-makinesi"],
   },
   {
     id: "elektrolux",
@@ -67,6 +67,7 @@ export const brands: Brand[] = [
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
@@ -133,6 +134,7 @@ export const brands: Brand[] = [
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
@@ -154,6 +156,7 @@ export const brands: Brand[] = [
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
@@ -197,6 +200,7 @@ export const brands: Brand[] = [
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
@@ -218,6 +222,7 @@ export const brands: Brand[] = [
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
@@ -239,6 +244,7 @@ export const brands: Brand[] = [
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
@@ -260,6 +266,7 @@ export const brands: Brand[] = [
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
@@ -281,6 +288,7 @@ export const brands: Brand[] = [
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
@@ -302,6 +310,7 @@ export const brands: Brand[] = [
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
@@ -323,6 +332,7 @@ export const brands: Brand[] = [
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
@@ -348,7 +358,7 @@ export const brands: Brand[] = [
     logo: "/markalarimiz/dampak.png",
     description:
       "Dampak, endüstriyel soğutma ekipmanları üretiminde kaliteli ürünler sunmaktadır. Dampak buzdolaplarının soğutma performansını kontrol edip bakım onarım hizmetlerini profesyonelce yapan teknisyenlerimiz hazır durumdadır. Soğutma sistemi arızalarında hızlı ve etkili çözümler sağlarız.",
-    services: ["buzdolabi"],
+    services: ["buzdolabi", "bulasik-makinesi"],
   },
   {
     id: "venarro",
@@ -358,7 +368,7 @@ export const brands: Brand[] = [
     logoDark: true,
     description:
       "Venarro, endüstriyel fırın teknolojisinde özel çözümler sunan bir markadır. Venarro fırınlarının bakım onarım ve sıcaklık kalibrasyonunu gerçekleştirmek üzere eğitimli teknisyenlerimiz bulunmaktadır. Fırın performansını optimize etmek ve uzun ömürlü çalışmasını sağlamak için düzenli bakım sunuyoruz.",
-    services: ["firin"],
+    services: ["firin", "bulasik-makinesi"],
   },
   {
     id: "unox",
@@ -367,7 +377,7 @@ export const brands: Brand[] = [
     logo: "/markalarimiz/unox.jpg",
     description:
       "Unox, İtalyan kökenli ve dünyaca ünlü endüstriyel fırın üreticisidir. Unox fırınlarının bakım onarım ve teknik servisini sunmak üzere sertifikalı teknisyenlerimiz yer almaktadır. Fırın performansını maksimum seviyede tutmak ve verimli çalışmasını garantilemekteyiz.",
-    services: ["firin"],
+    services: ["firin", "bulasik-makinesi"],
   },
   {
     id: "alveo",
@@ -375,7 +385,7 @@ export const brands: Brand[] = [
     slug: "alveo-servisi",
     description:
       "Alveo, endüstriyel fırın çözümlerinde inovatif teknolojiler sunmaktadır. Alveo fırınlarının bakım onarım ve sıcaklık kontrol işlemlerini profesyonelce yapan uzman teknikeri bulunmaktadır. Fırın sisteminin verimli çalışmasını sağlamak için periyodik bakım hizmetleri sunuyoruz.",
-    services: ["firin"],
+    services: ["firin", "bulasik-makinesi"],
   },
   {
     id: "emeksan",
@@ -392,6 +402,7 @@ export const brands: Brand[] = [
       "makarna-haslama",
       "benmari",
       "dogalgaz-kacagi",
+      "bulasik-makinesi",
     ],
   },
   {
@@ -406,6 +417,7 @@ export const brands: Brand[] = [
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
@@ -441,6 +453,7 @@ export const brands: Brand[] = [
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
