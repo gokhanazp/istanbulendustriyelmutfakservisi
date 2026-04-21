@@ -59,6 +59,25 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-S1J3ST948Z');
+
+              document.addEventListener('click', function(e) {
+                var link = e.target.closest('a');
+                if (!link) return;
+                var href = link.getAttribute('href') || '';
+                if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp') !== -1) {
+                  gtag('event', 'whatsapp_click', {
+                    event_category: 'iletisim',
+                    event_label: document.title,
+                    page_path: window.location.pathname
+                  });
+                } else if (href.indexOf('tel:') === 0) {
+                  gtag('event', 'telefon_click', {
+                    event_category: 'iletisim',
+                    event_label: document.title,
+                    page_path: window.location.pathname
+                  });
+                }
+              });
             `,
           }}
         />
