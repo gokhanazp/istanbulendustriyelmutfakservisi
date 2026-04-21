@@ -16,7 +16,7 @@ export const brands: Brand[] = [
     slug: "elektrolux-servisi",
     logo: "/markalarimiz/electrolux.png",
     description:
-      "Elektrolüx, dünya çapında tanınan endüstriyel mutfak ekipmanları üreticisidir ve geniş hizmet yelpazesi sunmaktadır. Ocak, fırın, izgara, fritöz, makarna haşlama, benmari, buzdolabı gibi tüm Elektrolüx ürünlerinin bakım ve onarımını profesyonelce gerçekleştirmekteyiz. Gaz kaçağı tespiti ve pompası servisleri de dahil olmak üzere kapsamlı destek sağlıyoruz.",
+      "Elektrolüx, dünya çapında tanınan endüstriyel mutfak ekipmanları üreticisidir ve geniş hizmet yelpazesi sunmaktadır. Ocak, fırın, izgara, fritöz, makarna haşlama, benmari, buzdolabı ve bulaşık makinesi gibi tüm Elektrolüx ürünlerinin bakım ve onarımını profesyonelce gerçekleştirmekteyiz. Gaz kaçağı tespiti ve pompası servisleri de dahil olmak üzere kapsamlı destek sağlıyoruz.",
     services: [
       "ocak",
       "firin",
@@ -26,6 +26,7 @@ export const brands: Brand[] = [
       "deterjan-pompasi",
       "parlatici-pompasi",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "benmari",
       "dogalgaz-kacagi",
@@ -37,12 +38,13 @@ export const brands: Brand[] = [
     slug: "empero-servisi",
     logo: "/markalarimiz/empero.png",
     description:
-      "Empero, Türkiye'nin önde gelen endüstriyel mutfak ekipmanları markasıdır ve yüksek kaliteli ürünleriyle bilinmektedir. Empero ocak, fırın, izgara, fritöz ve buzdolabı gibi ürünlerinin bakım onarımında deneyimli bir servis ağına sahibiz. Gaz sistemi, pompası ve benmari servisleri gibi tüm ihtiyaçlarınız için single call çözüm sunuyoruz.",
+      "Empero, Türkiye'nin önde gelen endüstriyel mutfak ekipmanları markasıdır ve yüksek kaliteli ürünleriyle bilinmektedir. Empero ocak, fırın, izgara, fritöz, buzdolabı ve bulaşık makinesi gibi ürünlerinin bakım onarımında deneyimli bir servis ağına sahibiz. Gaz sistemi, pompası ve benmari servisleri gibi tüm ihtiyaçlarınız için tek çağrı ile çözüm sunuyoruz.",
     services: [
       "ocak",
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
@@ -80,12 +82,13 @@ export const brands: Brand[] = [
     slug: "oztiryakiler-servisi",
     logo: "/markalarimiz/oztiryakiler.svg",
     description:
-      "Öztiryakiler, endüstriyel mutfak ekipmanlarında yerli ve güvenilir bir üreticidir. Öztiryakiler markalı ocak, fırın, izgara, fritöz, buzdolabı ve diğer mutfak ekipmanlarının bakım onarımını profesyonelce yürütmekteyiz. Gaz kaçağı tespiti, pompası servisleri ve benmari bakımı da kapsamlı hizmet paketimizin içinde yer almaktadır.",
+      "Öztiryakiler, endüstriyel mutfak ekipmanlarında yerli ve güvenilir bir üreticidir. Öztiryakiler markalı ocak, fırın, izgara, fritöz, buzdolabı, bulaşık makinesi ve diğer mutfak ekipmanlarının bakım onarımını profesyonelce yürütmekteyiz. Gaz kaçağı tespiti, pompası servisleri ve benmari bakımı da kapsamlı hizmet paketimizin içinde yer almaktadır.",
     services: [
       "ocak",
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
@@ -101,12 +104,13 @@ export const brands: Brand[] = [
     slug: "kayalar-mutfak-servisi",
     logo: "/markalarimiz/kayalar.png",
     description:
-      "Kayalar Mutfak, endüstriyel mutfak ekipmanlarında İstanbul'da bilininen bir markadır. Kayalar Mutfak ürünlerinin servisinde, ocak, fırın, buzdolabı, izgara gibi ana ekipmanlardan gaz kaçağı ve benmari servisine kadar kapsamlı destek sunuyoruz. Acil durumlarda hızlı müdahale ve uzun vadede bakım kontratları sunmaktayız.",
+      "Kayalar Mutfak, endüstriyel mutfak ekipmanlarında İstanbul'da bilinen bir markadır. Kayalar Mutfak ürünlerinin servisinde, ocak, fırın, buzdolabı, bulaşık makinesi, izgara gibi ana ekipmanlardan gaz kaçağı ve benmari servisine kadar kapsamlı destek sunuyoruz. Acil durumlarda hızlı müdahale ve uzun vadede bakım kontratları sunmaktayız.",
     services: [
       "ocak",
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
@@ -165,12 +169,13 @@ export const brands: Brand[] = [
     slug: "ndustrio-servisi",
     logo: "/markalarimiz/ndustrio.svg",
     description:
-      "Ndustrio, modern endüstriyel mutfak çözümlerinde uzmanlaşmış bir markadır. Ndustrio ocak, fırın, izgara, fritöz ve buzdolabı gibi ürünlerinin bakım ve onarımını yapan eğitimli ekibi bulunmaktadır. Gaz sistemi kontrolü ve pompası servisleri gibi tüm hizmetleri sunmak için hazırız.",
+      "Ndustrio, modern endüstriyel mutfak çözümlerinde uzmanlaşmış bir markadır. Ndustrio ocak, fırın, izgara, fritöz, buzdolabı ve bulaşık makinesi gibi ürünlerinin bakım ve onarımını yapan eğitimli ekibi bulunmaktadır. Gaz sistemi kontrolü ve pompası servisleri gibi tüm hizmetleri sunmak için hazırız.",
     services: [
       "ocak",
       "firin",
       "izgara",
       "buzdolabi",
+      "bulasik-makinesi",
       "gaz-kacagi",
       "fritoz",
       "makarna-haslama",
