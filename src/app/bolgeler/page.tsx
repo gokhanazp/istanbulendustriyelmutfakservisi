@@ -4,22 +4,31 @@ import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { CTABanner } from '@/components/ui/CTABanner';
 import Link from 'next/link';
 import { MapPin } from 'lucide-react';
+import { buildBreadcrumbSchema, canonical, SITE_NAME, SITE_URL } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'İstanbul Servis Bölgeleri | İstanbul Endüstriyel Mutfak Servisi',
+  title: 'İstanbul Servis Bölgeleri',
   description:
-    'İstanbul genelinde tüm ilçelerde endüstriyel mutfak ekipmanlarının bakım ve onarım hizmetleri. 7/24 acil destek ve aynı gün servis hizmeti.',
+    "İstanbul'un 39 ilçesinde endüstriyel mutfak ekipmanları bakım ve onarım hizmetleri. Kadıköy, Şişli, Beşiktaş, Bakırköy, Ümraniye ve diğer ilçelerde 7/24 acil destek, aynı gün servis.",
   keywords: [
     'İstanbul servis bölgeleri',
-    'İstanbul ilçeleri',
-    'Endüstriyel mutfak servisi',
-    'Acil servis',
+    'İstanbul ilçeleri endüstriyel mutfak servisi',
+    'Kadıköy mutfak servisi',
+    'Şişli mutfak servisi',
+    'Beşiktaş mutfak servisi',
+    'Acil servis İstanbul',
   ],
   openGraph: {
-    title: 'İstanbul Servis Bölgeleri | İstanbul Endüstriyel Mutfak Servisi',
+    title: `İstanbul Servis Bölgeleri | ${SITE_NAME}`,
     description:
-      'İstanbul genelinde tüm ilçelerde endüstriyel mutfak ekipmanlarının bakım ve onarım hizmetleri.',
+      "İstanbul'un 39 ilçesinde endüstriyel mutfak ekipmanlarının bakım ve onarım hizmetleri.",
+    url: canonical('/bolgeler'),
+    siteName: SITE_NAME,
+    locale: 'tr_TR',
     type: 'website',
+  },
+  alternates: {
+    canonical: '/bolgeler',
   },
 };
 
@@ -218,28 +227,43 @@ export default function RegionsPage() {
         description="Hangi ilçede olursanız olun, endüstriyel mutfak ekipmanlarınız için profesyonel ve güvenilir servis hizmeti alabilirsiniz."
       />
 
-      {/* Schema Markup */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'Organization',
-            name: 'İstanbul Endüstriyel Mutfak Servisi',
-            description: 'İstanbul genelinde endüstriyel mutfak servisi',
-            areaServed: regions.map((r) => ({
-              '@type': 'City',
-              name: r.name,
-            })),
-            serviceArea: {
-              '@type': 'City',
-              name: 'İstanbul',
-            },
-            hasOfferCatalog: {
-              '@type': 'OfferCatalog',
-              name: 'Endüstriyel Mutfak Servisleri',
+            '@type': 'CollectionPage',
+            '@id': `${canonical('/bolgeler')}/#collectionpage`,
+            url: canonical('/bolgeler'),
+            name: `İstanbul Servis Bölgeleri | ${SITE_NAME}`,
+            description:
+              "İstanbul'un 39 ilçesinde endüstriyel mutfak ekipmanları bakım ve onarım hizmetleri.",
+            inLanguage: 'tr-TR',
+            isPartOf: { '@id': `${SITE_URL}/#website` },
+            about: { '@id': `${SITE_URL}/#organization` },
+            mainEntity: {
+              '@type': 'ItemList',
+              numberOfItems: regions.length,
+              itemListElement: regions.map((r, idx) => ({
+                '@type': 'ListItem',
+                position: idx + 1,
+                name: `${r.name} Endüstriyel Mutfak Servisi`,
+                url: canonical(`/bolgeler/${r.slug}`),
+              })),
             },
           }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildBreadcrumbSchema([
+              { name: 'Ana Sayfa', url: SITE_URL },
+              { name: 'Bölgeler', url: canonical('/bolgeler') },
+            ])
+          ),
         }}
       />
     </div>

@@ -6,6 +6,14 @@ import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { CTABanner } from '@/components/ui/CTABanner';
 import Link from 'next/link';
 import { MapPin, Phone } from 'lucide-react';
+import {
+  buildBreadcrumbSchema,
+  canonical,
+  SITE_LOGO,
+  SITE_NAME,
+  SITE_PHONE,
+  SITE_URL,
+} from '@/lib/seo';
 
 interface RegionDetailPageProps {
   params: Promise<{
@@ -31,19 +39,29 @@ export async function generateMetadata(
     };
   }
 
+  const url = canonical(`/bolgeler/${region.slug}`);
+
   return {
     title: `${region.name} Endüstriyel Mutfak Servisi | İstanbul`,
-    description: `${region.name}'da endüstriyel mutfak ekipmanlarının profesyonel bakım ve onarım hizmetleri. 7/24 acil destek.`,
+    description: `${region.name}'da endüstriyel mutfak ekipmanlarının profesyonel bakım ve onarım hizmetleri. Ocak, fırın, buzdolabı, soğuk oda servisi. 7/24 acil destek, aynı gün müdahale.`,
     keywords: [
-      region.name,
-      'Endüstriyel mutfak servisi',
-      'İstanbul',
-      'Servis',
+      `${region.name} endüstriyel mutfak servisi`,
+      `${region.name} ocak servisi`,
+      `${region.name} fırın servisi`,
+      `${region.name} buzdolabı tamiri`,
+      `${region.name} mutfak ekipmanı tamiri`,
+      'İstanbul endüstriyel mutfak servisi',
     ],
     openGraph: {
       title: `${region.name} Endüstriyel Mutfak Servisi | İstanbul`,
       description: `${region.name}'da endüstriyel mutfak ekipmanlarının profesyonel bakım ve onarım hizmetleri.`,
       type: 'website',
+      url,
+      siteName: SITE_NAME,
+      locale: 'tr_TR',
+    },
+    alternates: {
+      canonical: `/bolgeler/${region.slug}`,
     },
   };
 }
@@ -73,12 +91,6 @@ export default async function RegionDetailPage(props: RegionDetailPageProps) {
       </div>
     );
   }
-
-  // Get nearby districts
-  const nearbyRegions = regions
-    .filter((r) => r.slug !== region.slug)
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 5);
 
   // Generate nearby districts list - for demo purposes
   const getNearbyDistricts = () => {
@@ -273,7 +285,7 @@ export default async function RegionDetailPage(props: RegionDetailPageProps) {
               Acil Servis: 0501 300 19 81
             </a>
             <a
-              href="https://wa.me/905013001981?text=Merhaba%2C%20{region.name}'de%20endüstriyel%20mutfak%20ekipmanlarım%20için%20servis%20hizmeti%20almak%20istiyorum."
+              href={`https://wa.me/905013001981?text=${encodeURIComponent(`Merhaba, ${region.name}'de endüstriyel mutfak ekipmanlarım için servis hizmeti almak istiyorum.`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-8 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-colors shadow-lg"
@@ -323,15 +335,18 @@ export default async function RegionDetailPage(props: RegionDetailPageProps) {
         description={`${region.name} bölgesinde ekipmanlarınız için profesyonel ve güvenilir servis hizmeti sunmaktayız.`}
       />
 
-      {/* Schema Markup */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
-            name: `${region.name} Endüstriyel Mutfak Servisi`,
+            '@id': `${canonical(`/bolgeler/${region.slug}`)}/#localbusiness`,
+            name: `${region.name} Endüstriyel Mutfak Servisi - ${SITE_NAME}`,
             description: region.description,
+            url: canonical(`/bolgeler/${region.slug}`),
+            image: SITE_LOGO,
+            logo: SITE_LOGO,
             address: {
               '@type': 'PostalAddress',
               addressLocality: region.name,
@@ -341,17 +356,62 @@ export default async function RegionDetailPage(props: RegionDetailPageProps) {
             areaServed: {
               '@type': 'City',
               name: region.name,
+              containedInPlace: {
+                '@type': 'AdministrativeArea',
+                name: 'İstanbul',
+              },
             },
-            serviceArea: [
+            serviceArea: {
+              '@type': 'City',
+              name: region.name,
+            },
+            telephone: SITE_PHONE,
+            priceRange: '$$',
+            openingHoursSpecification: [
               {
-                '@type': 'City',
-                name: region.name,
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: [
+                  'Monday',
+                  'Tuesday',
+                  'Wednesday',
+                  'Thursday',
+                  'Friday',
+                  'Saturday',
+                ],
+                opens: '08:00',
+                closes: '19:00',
+              },
+              {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: 'Sunday',
+                opens: '00:00',
+                closes: '23:59',
               },
             ],
-            telephone: '0212 XXX XX XX',
-            priceRange: '$$',
-            openingHours: 'Mo-Su 00:00-24:00',
+            parentOrganization: { '@id': `${SITE_URL}/#organization` },
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '4.8',
+              reviewCount: '150',
+              bestRating: '5',
+            },
           }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildBreadcrumbSchema([
+              { name: 'Ana Sayfa', url: SITE_URL },
+              { name: 'Bölgeler', url: canonical('/bolgeler') },
+              {
+                name: region.name,
+                url: canonical(`/bolgeler/${region.slug}`),
+              },
+            ])
+          ),
         }}
       />
     </div>

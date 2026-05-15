@@ -8,79 +8,84 @@ import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { SEOContentSection } from "@/components/sections/SEOContentSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { ContactCTASection } from "@/components/sections/ContactCTASection";
+import { faqData } from "@/data/faq";
+import { SITE_NAME, SITE_OG_IMAGE, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title:
-    "İstanbul Endüstriyel Mutfak Servisi - Aynı Gün Servis 24/7",
+    "İstanbul Endüstriyel Mutfak Servisi - Aynı Gün Servis 7/24",
   description:
     "İstanbul'da endüstriyel mutfak ekipmanları servis ve bakımı. Ocak, fırın, izgara, fritöz, buzdolabı onarımı. Aynı gün müdahale, orijinal yedek parçalar, 6 ay garantili hizmet.",
   keywords: [
     "endüstriyel mutfak servisi",
-    "İstanbul",
-    "ocak servisi",
-    "fırın servisi",
-    "buzdolabı servisi",
+    "istanbul endüstriyel mutfak servisi",
+    "endüstriyel ocak servisi",
+    "endüstriyel fırın servisi",
+    "endüstriyel buzdolabı servisi",
+    "soğuk oda servisi",
     "gaz kaçağı tespiti",
-    "24/7 servis",
-    "aynı gün servis",
+    "endüstriyel mutfak tamiri",
+    "7/24 acil servis",
+    "aynı gün müdahale",
   ],
-  authors: [{ name: "İstanbul Endüstriyel Mutfak Servisi" }],
   openGraph: {
-    title:
-      "İstanbul Endüstriyel Mutfak Servisi - Aynı Gün Servis 24/7",
+    type: "website",
+    locale: "tr_TR",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: "İstanbul Endüstriyel Mutfak Servisi - Aynı Gün Servis 7/24",
     description:
       "Profesyonel endüstriyel mutfak ekipmanları servis hizmetleri. Aynı gün müdahale, orijinal yedek parçalar, 6 ay garantili.",
-    url: "https://www.example.com",
-    siteName: "İstanbul Endüstriyel Mutfak Servisi",
-    locale: "tr_TR",
-    type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
+    images: [
+      {
+        url: SITE_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: SITE_NAME,
+      },
+    ],
   },
   alternates: {
-    canonical: "https://www.example.com",
+    canonical: "/",
   },
 };
 
 export default function Home() {
   return (
     <main className="w-full">
-      {/* Hero Section with form */}
       <HeroSection />
 
-      {/* Trust Badges Section */}
       <section className="py-12 md:py-16 bg-white border-t border-slate-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <TrustBadges />
         </div>
       </section>
 
-      {/* Services Grid */}
       <ServicesGrid />
-
-      {/* Brands Section */}
       <BrandsSection />
-
-      {/* Why Us Section */}
       <WhyUsSection />
-
-      {/* Process Steps */}
       <ProcessSteps />
-
-      {/* SEO Content Section */}
       <SEOContentSection />
-
-      {/* FAQ Section */}
       <FAQSection />
-
-      {/* Contact CTA Section */}
       <ContactCTASection />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqData.slice(0, 8).map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          }),
+        }}
+      />
     </main>
   );
 }

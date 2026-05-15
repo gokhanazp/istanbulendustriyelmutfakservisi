@@ -4,6 +4,14 @@ import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blog";
 import { services } from "@/data/services";
 import { Calendar, Tag, ArrowLeft, Phone, MessageCircle } from "lucide-react";
+import {
+  buildBreadcrumbSchema,
+  canonical,
+  SITE_LOGO,
+  SITE_NAME,
+  SITE_OG_IMAGE,
+  SITE_URL,
+} from "@/lib/seo";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -27,16 +35,35 @@ export async function generateMetadata(props: BlogPostPageProps): Promise<Metada
     title,
     description,
     keywords,
+    authors: [{ name: SITE_NAME, url: SITE_URL }],
     alternates: {
-      canonical: `https://istanbulendustriyelmutfakservisi.com/blog/${post.slug}`,
+      canonical: `/blog/${post.slug}`,
     },
     openGraph: {
       title,
       description,
       type: "article",
       locale: "tr_TR",
-      url: `https://istanbulendustriyelmutfakservisi.com/blog/${post.slug}`,
+      url: canonical(`/blog/${post.slug}`),
+      siteName: SITE_NAME,
       publishedTime: post.publishDate,
+      modifiedTime: post.publishDate,
+      authors: [SITE_NAME],
+      tags: post.tags,
+      images: [
+        {
+          url: SITE_OG_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [SITE_OG_IMAGE],
     },
   };
 }
@@ -291,7 +318,56 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
         </div>
       </section>
 
-      {/* Bottom CTA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "@id": `${canonical(`/blog/${post.slug}`)}/#article`,
+            headline: post.title,
+            description: post.seoDescription || post.excerpt,
+            image: SITE_OG_IMAGE,
+            datePublished: post.publishDate,
+            dateModified: post.publishDate,
+            author: {
+              "@type": "Organization",
+              name: SITE_NAME,
+              url: SITE_URL,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: SITE_NAME,
+              logo: {
+                "@type": "ImageObject",
+                url: SITE_LOGO,
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": canonical(`/blog/${post.slug}`),
+            },
+            articleSection: post.category,
+            keywords: (post.seoKeywords || post.tags).join(", "),
+            inLanguage: "tr-TR",
+            isPartOf: { "@id": `${SITE_URL}/#website` },
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildBreadcrumbSchema([
+              { name: "Ana Sayfa", url: SITE_URL },
+              { name: "Blog", url: canonical("/blog") },
+              { name: post.title, url: canonical(`/blog/${post.slug}`) },
+            ])
+          ),
+        }}
+      />
+
       <section className="py-14 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold mb-4">

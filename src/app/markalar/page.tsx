@@ -5,9 +5,10 @@ import { CTABanner } from "@/components/ui/CTABanner";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { brands } from "@/data/brands";
 import { ChevronRight, Shield, Award, Wrench } from "lucide-react";
+import { buildBreadcrumbSchema, canonical, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Servis Verdiğimiz Markalar | İstanbul Endüstriyel Mutfak Servisi",
+  title: "Servis Verdiğimiz Markalar",
   description:
     "Elektrolüx, Empero, İnoksan, Öztiryakiler, Kayalar Mutfak ve 19 marka daha. İstanbul'da 24 markanın endüstriyel mutfak ekipmanlarının servisini yapıyoruz.",
   keywords: [
@@ -19,15 +20,15 @@ export const metadata: Metadata = {
     "İstanbul marka servisi",
   ],
   openGraph: {
-    title: "Servis Verdiğimiz Markalar | İstanbul Endüstriyel Mutfak Servisi",
+    title: `Servis Verdiğimiz Markalar | ${SITE_NAME}`,
     description: "24 uluslararası ve yerli markanın endüstriyel mutfak ekipmanlarının profesyonel servisi",
-    url: "https://istanbulendustriyelmutfakservisi.com/markalar",
-    siteName: "İstanbul Endüstriyel Mutfak Servisi",
+    url: canonical("/markalar"),
+    siteName: SITE_NAME,
     locale: "tr_TR",
     type: "website",
   },
   alternates: {
-    canonical: "https://istanbulendustriyelmutfakservisi.com/markalar",
+    canonical: "/markalar",
   },
 };
 
@@ -224,6 +225,45 @@ export default function BrandsPage() {
       <CTABanner
         title="Markanız Ne Olursa Olsun, Biz Hizmetinize Hazırız"
         description="24 markanın servisini yapan profesyonel ekibimiz, İstanbul'da 7/24 acil destek sunmaktadır."
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "@id": `${canonical("/markalar")}/#collectionpage`,
+            url: canonical("/markalar"),
+            name: `Servis Verdiğimiz Markalar | ${SITE_NAME}`,
+            description:
+              "Elektrolüx, Empero, İnoksan, Öztiryakiler, Kayalar Mutfak ve 19 marka daha.",
+            inLanguage: "tr-TR",
+            isPartOf: { "@id": `${SITE_URL}/#website` },
+            mainEntity: {
+              "@type": "ItemList",
+              numberOfItems: brands.length,
+              itemListElement: brands.map((brand, idx) => ({
+                "@type": "ListItem",
+                position: idx + 1,
+                name: `${brand.name} Servisi`,
+                url: canonical(`/markalar/${brand.slug}`),
+              })),
+            },
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildBreadcrumbSchema([
+              { name: "Ana Sayfa", url: SITE_URL },
+              { name: "Markalar", url: canonical("/markalar") },
+            ])
+          ),
+        }}
       />
     </main>
   );

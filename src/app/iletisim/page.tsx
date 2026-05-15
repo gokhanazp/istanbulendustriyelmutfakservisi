@@ -1,30 +1,39 @@
 import { Metadata } from "next";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ContactForm } from "@/components/forms/ContactForm";
+import {
+  buildBreadcrumbSchema,
+  canonical,
+  SITE_EMAIL,
+  SITE_LOGO,
+  SITE_NAME,
+  SITE_PHONE,
+  SITE_URL,
+} from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "İletişim | İstanbul Endüstriyel Mutfak Servisi",
+  title: "İletişim",
   description:
-    "İletişim sayfası. Telefon: 0501 300 19 81, WhatsApp: 0501 300 19 81, Email: info@istanbulendustriyelmutfakservisi.com. 24/7 acil destek hizmetleri.",
+    "İletişim sayfası. Telefon: 0501 300 19 81, WhatsApp: 0501 300 19 81, Email: info@istanbulendustriyelmutfakservisi.com. 7/24 acil destek hizmetleri.",
   keywords: [
     "iletişim",
-    "endüstriyel mutfak servisi",
-    "İstanbul",
+    "endüstriyel mutfak servisi iletişim",
+    "İstanbul mutfak servisi telefon",
     "telefon",
     "WhatsApp",
     "email",
   ],
   openGraph: {
-    title: "İletişim | İstanbul Endüstriyel Mutfak Servisi",
+    title: `İletişim | ${SITE_NAME}`,
     description:
-      "24/7 acil destek için bizimle iletişime geçin. Telefon, WhatsApp, email ve iletişim formu ile hizmetinize hazırız.",
-    url: "https://www.example.com/iletisim",
-    siteName: "İstanbul Endüstriyel Mutfak Servisi",
+      "7/24 acil destek için bizimle iletişime geçin. Telefon, WhatsApp, email ve iletişim formu ile hizmetinize hazırız.",
+    url: canonical("/iletisim"),
+    siteName: SITE_NAME,
     locale: "tr_TR",
     type: "website",
   },
   alternates: {
-    canonical: "https://www.example.com/iletisim",
+    canonical: "/iletisim",
   },
 };
 
@@ -312,57 +321,98 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Schema Markup - LocalBusiness */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            name: "İstanbul Endüstriyel Mutfak Servisi",
-            image: "https://www.example.com/logo.png",
-            description:
-              "İstanbul'da endüstriyel mutfak ekipmanları servis ve bakımı. Ocak, fırın, izgara, fritöz, buzdolabı onarımı. Aynı gün servis, orijinal yedek parçalar, 6 ay garantili hizmet.",
-            telephone: "0212 XXX XX XX",
-            email: "info@istanbulendustriyelmutfakservisi.com",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "İstanbul",
-              addressCountry: "TR",
-              addressRegion: "İstanbul",
-            },
-            areaServed: {
-              "@type": "City",
-              name: "İstanbul",
-            },
-            priceRange: "$$",
-            openingHoursSpecification: [
-              {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                ],
-                opens: "08:00",
-                closes: "19:00",
+            "@type": "ContactPage",
+            "@id": `${canonical("/iletisim")}/#contactpage`,
+            name: `İletişim | ${SITE_NAME}`,
+            url: canonical("/iletisim"),
+            inLanguage: "tr-TR",
+            isPartOf: { "@id": `${SITE_URL}/#website` },
+            about: { "@id": `${SITE_URL}/#organization` },
+            mainEntity: {
+              "@type": "LocalBusiness",
+              "@id": `${SITE_URL}/#organization`,
+              name: SITE_NAME,
+              image: SITE_LOGO,
+              logo: SITE_LOGO,
+              description:
+                "İstanbul'da endüstriyel mutfak ekipmanları servis ve bakımı. Ocak, fırın, izgara, fritöz, buzdolabı onarımı. Aynı gün servis, orijinal yedek parçalar, 6 ay garantili hizmet.",
+              telephone: SITE_PHONE,
+              email: SITE_EMAIL,
+              url: SITE_URL,
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "İstanbul",
+                addressCountry: "TR",
+                addressRegion: "İstanbul",
               },
-              {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: "Sunday",
-                opens: "00:00",
-                closes: "23:59",
+              areaServed: {
+                "@type": "City",
+                name: "İstanbul",
               },
-            ],
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.8",
-              reviewCount: "150",
+              priceRange: "$$",
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                  ],
+                  opens: "08:00",
+                  closes: "19:00",
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: "Sunday",
+                  opens: "00:00",
+                  closes: "23:59",
+                },
+              ],
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  telephone: SITE_PHONE,
+                  contactType: "customer service",
+                  areaServed: "TR",
+                  availableLanguage: ["Turkish"],
+                  contactOption: "TollFree",
+                },
+                {
+                  "@type": "ContactPoint",
+                  telephone: SITE_PHONE,
+                  contactType: "emergency",
+                  areaServed: "TR",
+                  availableLanguage: ["Turkish"],
+                },
+              ],
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.8",
+                reviewCount: "150",
+                bestRating: "5",
+              },
             },
           }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildBreadcrumbSchema([
+              { name: "Ana Sayfa", url: SITE_URL },
+              { name: "İletişim", url: canonical("/iletisim") },
+            ])
+          ),
         }}
       />
     </main>

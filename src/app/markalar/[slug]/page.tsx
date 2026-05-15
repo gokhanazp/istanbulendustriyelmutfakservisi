@@ -7,6 +7,13 @@ import { BrandLogo } from "@/components/ui/BrandLogo";
 import { ContactForm } from "@/components/forms/ContactForm";
 import Link from "next/link";
 import {
+  canonical,
+  SITE_LOGO,
+  SITE_NAME,
+  SITE_PHONE,
+  SITE_URL,
+} from "@/lib/seo";
+import {
   CheckCircle,
   Clock,
   Shield,
@@ -53,25 +60,26 @@ export async function generateMetadata(
   }
 
   return {
-    title: `${brand.name} Servisi - İstanbul | Endüstriyel Mutfak Servisi`,
+    title: `${brand.name} Servisi - İstanbul | ${SITE_NAME}`,
     description: brand.description,
     keywords: [
-      brand.name,
       `${brand.name} servisi`,
+      `${brand.name} İstanbul servis`,
+      `${brand.name} yetkili servis`,
+      `${brand.name} teknik servis`,
       "Endüstriyel mutfak servisi",
       "İstanbul",
-      "Marka servis",
     ],
     openGraph: {
-      title: `${brand.name} Servisi - İstanbul | Endüstriyel Mutfak Servisi`,
+      title: `${brand.name} Servisi - İstanbul | ${SITE_NAME}`,
       description: brand.description,
-      url: `https://istanbulendustriyelmutfakservisi.com/markalar/${brand.slug}`,
-      siteName: "İstanbul Endüstriyel Mutfak Servisi",
+      url: canonical(`/markalar/${brand.slug}`),
+      siteName: SITE_NAME,
       locale: "tr_TR",
       type: "website",
     },
     alternates: {
-      canonical: `https://istanbulendustriyelmutfakservisi.com/markalar/${brand.slug}`,
+      canonical: `/markalar/${brand.slug}`,
     },
   };
 }
@@ -637,29 +645,51 @@ export default async function BrandDetailPage(props: BrandDetailPageProps) {
         description="İstanbul genelinde 7/24 acil müdahale ve periyodik bakım hizmetleri sunmaktayız."
       />
 
-      {/* Schema Markup */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            name: `${brand.name} Servisi - İstanbul Endüstriyel Mutfak Servisi`,
+            "@type": "Service",
+            "@id": `${canonical(`/markalar/${brand.slug}`)}/#service`,
+            name: `${brand.name} Yetkili Servisi - İstanbul`,
             description: brand.description,
-            url: `https://istanbulendustriyelmutfakservisi.com/markalar/${brand.slug}`,
-            serviceArea: {
+            url: canonical(`/markalar/${brand.slug}`),
+            image: SITE_LOGO,
+            serviceType: `${brand.name} servis ve onarım`,
+            brand: {
+              "@type": "Brand",
+              name: brand.name,
+            },
+            areaServed: {
               "@type": "City",
               name: "İstanbul",
             },
-            areaServed: "İstanbul",
-            telephone: "0501 300 19 81",
-            priceRange: "$$",
-            knowsAbout: brandServices.map((s) => s.name),
+            provider: {
+              "@type": "LocalBusiness",
+              "@id": `${SITE_URL}/#organization`,
+              name: SITE_NAME,
+              url: SITE_URL,
+              telephone: SITE_PHONE,
+              image: SITE_LOGO,
+              priceRange: "$$",
+            },
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: `${brand.name} servis hizmetleri`,
+              itemListElement: brandServices.map((s) => ({
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: s.name,
+                  url: canonical(`/hizmetler/${s.slug}`),
+                },
+              })),
+            },
           }),
         }}
       />
 
-      {/* BreadcrumbList Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -671,19 +701,19 @@ export default async function BrandDetailPage(props: BrandDetailPageProps) {
                 "@type": "ListItem",
                 position: 1,
                 name: "Ana Sayfa",
-                item: "https://istanbulendustriyelmutfakservisi.com",
+                item: SITE_URL,
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Markalar",
-                item: "https://istanbulendustriyelmutfakservisi.com/markalar",
+                item: canonical("/markalar"),
               },
               {
                 "@type": "ListItem",
                 position: 3,
                 name: `${brand.name} Servisi`,
-                item: `https://istanbulendustriyelmutfakservisi.com/markalar/${brand.slug}`,
+                item: canonical(`/markalar/${brand.slug}`),
               },
             ],
           }),

@@ -3,40 +3,40 @@ import { ChevronDown } from "lucide-react";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTABanner } from "@/components/ui/CTABanner";
 import { faqData } from "@/data/faq";
+import { buildBreadcrumbSchema, canonical, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Sık Sorulan Sorular | İstanbul Endüstriyel Mutfak Servisi",
+  title: "Sık Sorulan Sorular",
   description:
     "Endüstriyel mutfak servisi hakkında sık sorulan sorulara profesyonel cevaplar. Acil servis, garantiler, markalar, bakım kontratları ve daha fazlası.",
   keywords: [
     "sık sorulan sorular",
     "SSS",
-    "endüstriyel mutfak",
+    "endüstriyel mutfak SSS",
     "servis hakkında",
     "garantiler",
     "acil servis",
   ],
   openGraph: {
-    title: "Sık Sorulan Sorular | İstanbul Endüstriyel Mutfak Servisi",
+    title: `Sık Sorulan Sorular | ${SITE_NAME}`,
     description:
       "Endüstriyel mutfak servisi hakkında sık sorulan sorulara cevaplar",
-    url: "https://www.example.com/sss",
-    siteName: "İstanbul Endüstriyel Mutfak Servisi",
+    url: canonical("/sss"),
+    siteName: SITE_NAME,
     locale: "tr_TR",
     type: "website",
   },
   alternates: {
-    canonical: "https://www.example.com/sss",
+    canonical: "/sss",
   },
 };
 
 interface FAQItemProps {
   question: string;
   answer: string;
-  index: number;
 }
 
-function FAQItem({ question, answer, index }: FAQItemProps) {
+function FAQItem({ question, answer }: FAQItemProps) {
   return (
     <div
       className="border border-slate-200 rounded-lg overflow-hidden hover:border-orange-300 transition-colors"
@@ -98,7 +98,6 @@ export default function FAQPage() {
                 key={index}
                 question={faq.question}
                 answer={faq.answer}
-                index={index}
               />
             ))}
           </div>
@@ -170,13 +169,16 @@ export default function FAQPage() {
         description="Sorularınız varsa, bizimle iletişime geçin. 24/7 acil destek hizmetleriyle yanınızdayız."
       />
 
-      {/* FAQ Schema Markup */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
+            "@id": `${canonical("/sss")}/#faqpage`,
+            url: canonical("/sss"),
+            inLanguage: "tr-TR",
+            isPartOf: { "@id": `${SITE_URL}/#website` },
             mainEntity: faqData.map((faq) => ({
               "@type": "Question",
               name: faq.question,
@@ -186,6 +188,18 @@ export default function FAQPage() {
               },
             })),
           }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildBreadcrumbSchema([
+              { name: "Ana Sayfa", url: SITE_URL },
+              { name: "Sık Sorulan Sorular", url: canonical("/sss") },
+            ])
+          ),
         }}
       />
     </main>

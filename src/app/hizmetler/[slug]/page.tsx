@@ -7,6 +7,14 @@ import { BrandLogo } from "@/components/ui/BrandLogo";
 import { ContactForm } from "@/components/forms/ContactForm";
 import Link from "next/link";
 import {
+  buildBreadcrumbSchema,
+  canonical,
+  SITE_LOGO,
+  SITE_NAME,
+  SITE_PHONE,
+  SITE_URL,
+} from "@/lib/seo";
+import {
   CheckCircle,
   Clock,
   Shield,
@@ -49,10 +57,11 @@ export async function generateMetadata(
     return { title: "Hizmet Bulunamadı" };
   }
 
-  const title = service.seoTitle || `${service.name} | İstanbul Endüstriyel Mutfak Servisi`;
+  const title = service.seoTitle || `${service.name} | ${SITE_NAME}`;
   const description = service.seoDescription || service.shortDescription;
   const keywords = service.seoKeywords || [
     service.name,
+    `${service.name} İstanbul`,
     "Endüstriyel mutfak servisi",
     "İstanbul",
     service.category,
@@ -65,13 +74,13 @@ export async function generateMetadata(
     openGraph: {
       title,
       description,
-      url: `https://istanbulendustriyelmutfakservisi.com/hizmetler/${service.slug}`,
-      siteName: "İstanbul Endüstriyel Mutfak Servisi",
+      url: canonical(`/hizmetler/${service.slug}`),
+      siteName: SITE_NAME,
       locale: "tr_TR",
       type: "website",
     },
     alternates: {
-      canonical: `https://istanbulendustriyelmutfakservisi.com/hizmetler/${service.slug}`,
+      canonical: `/hizmetler/${service.slug}`,
     },
   };
 }
@@ -414,7 +423,7 @@ export default async function ServiceDetailPage(
               Bu Hizmeti Sunduğumuz Markalar
             </h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {relatedBrands.map((brand, index) => (
+              {relatedBrands.map((brand) => (
                 <Link
                   key={brand.id}
                   href={`/markalar/${brand.slug}`}
@@ -534,30 +543,61 @@ export default async function ServiceDetailPage(
         description="7/24 acil müdahale hizmetiyle işletmenizin ekipmanlarını hızlı ve güvenilir şekilde onarıyoruz."
       />
 
-      {/* Schema Markup */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
+            "@id": `${canonical(`/hizmetler/${service.slug}`)}/#service`,
             name: service.name,
             description: service.description,
+            url: canonical(`/hizmetler/${service.slug}`),
+            image: SITE_LOGO,
+            serviceType: service.name,
+            category: categoryNames[service.category],
             areaServed: {
               "@type": "City",
               name: "İstanbul",
             },
             provider: {
-              "@type": "Organization",
-              name: "İstanbul Endüstriyel Mutfak Servisi",
-              url: "https://istanbulendustriyelmutfakservisi.com",
+              "@type": "LocalBusiness",
+              "@id": `${SITE_URL}/#organization`,
+              name: SITE_NAME,
+              url: SITE_URL,
+              telephone: SITE_PHONE,
+              priceRange: "$$",
+              image: SITE_LOGO,
             },
-            serviceType: service.name,
+            offers: {
+              "@type": "Offer",
+              availability: "https://schema.org/InStock",
+              priceCurrency: "TRY",
+              price: "0",
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                priceCurrency: "TRY",
+                description: "Ücretsiz keşif ve fiyat teklifi",
+              },
+              areaServed: { "@type": "City", name: "İstanbul" },
+              seller: { "@id": `${SITE_URL}/#organization` },
+            },
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: `${service.name} - Servis Kategorileri`,
+              itemListElement: relatedServices.map((rs) => ({
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: rs.name,
+                  url: canonical(`/hizmetler/${rs.slug}`),
+                },
+              })),
+            },
           }),
         }}
       />
 
-      {/* FAQ Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -573,6 +613,22 @@ export default async function ServiceDetailPage(
               },
             })),
           }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildBreadcrumbSchema([
+              { name: "Ana Sayfa", url: SITE_URL },
+              { name: "Hizmetler", url: canonical("/hizmetler") },
+              {
+                name: service.name,
+                url: canonical(`/hizmetler/${service.slug}`),
+              },
+            ])
+          ),
         }}
       />
     </main>

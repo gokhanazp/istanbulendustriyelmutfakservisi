@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { blogPosts } from "@/data/blog";
 import { Calendar, ArrowRight, Tag } from "lucide-react";
+import { buildBreadcrumbSchema, canonical, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Blog | Endüstriyel Mutfak Bakım ve Tamir Rehberi | İstanbul",
+  title: "Blog | Endüstriyel Mutfak Bakım ve Tamir Rehberi",
   description:
     "Endüstriyel mutfak ekipmanları hakkında uzman bilgileri, bakım rehberleri, arıza çözümleri ve tamir ipuçları. Buzdolabı tamiri, ocak bakımı, soğuk oda servisi ve daha fazlası.",
   keywords: [
@@ -15,8 +16,17 @@ export const metadata: Metadata = {
     "mutfak ekipmanı bakımı",
     "İstanbul mutfak servisi",
   ],
+  openGraph: {
+    title: `Blog | ${SITE_NAME}`,
+    description:
+      "Endüstriyel mutfak ekipmanları hakkında uzman bilgileri, bakım rehberleri, arıza çözümleri ve tamir ipuçları.",
+    url: canonical("/blog"),
+    siteName: SITE_NAME,
+    locale: "tr_TR",
+    type: "website",
+  },
   alternates: {
-    canonical: "https://istanbulendustriyelmutfakservisi.com/blog",
+    canonical: "/blog",
   },
 };
 
@@ -142,6 +152,45 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "@id": `${canonical("/blog")}/#blog`,
+            url: canonical("/blog"),
+            name: `Blog | ${SITE_NAME}`,
+            description:
+              "Endüstriyel mutfak ekipmanları hakkında uzman bilgileri, bakım rehberleri, arıza çözümleri ve tamir ipuçları.",
+            inLanguage: "tr-TR",
+            isPartOf: { "@id": `${SITE_URL}/#website` },
+            publisher: { "@id": `${SITE_URL}/#organization` },
+            blogPost: blogPosts.map((post) => ({
+              "@type": "BlogPosting",
+              headline: post.title,
+              url: canonical(`/blog/${post.slug}`),
+              datePublished: post.publishDate,
+              dateModified: post.publishDate,
+              description: post.excerpt,
+              author: { "@type": "Organization", name: SITE_NAME },
+            })),
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildBreadcrumbSchema([
+              { name: "Ana Sayfa", url: SITE_URL },
+              { name: "Blog", url: canonical("/blog") },
+            ])
+          ),
+        }}
+      />
     </>
   );
 }

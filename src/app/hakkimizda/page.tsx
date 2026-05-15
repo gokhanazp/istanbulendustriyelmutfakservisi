@@ -1,11 +1,12 @@
 import { Metadata } from "next";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTABanner } from "@/components/ui/CTABanner";
+import { buildBreadcrumbSchema, canonical, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Hakkımızda | İstanbul Endüstriyel Mutfak Servisi",
+  title: "Hakkımızda",
   description:
-    "İstanbul Endüstriyel Mutfak Servisi hakkında. 15+ yıl deneyim, 500+ müşteri, profesyonel ekip ve 24/7 acil destek hizmetleri.",
+    "İstanbul Endüstriyel Mutfak Servisi hakkında. 15+ yıl deneyim, 500+ müşteri, profesyonel ekip ve 7/24 acil destek hizmetleri.",
   keywords: [
     "hakkımızda",
     "endüstriyel mutfak servisi",
@@ -15,16 +16,16 @@ export const metadata: Metadata = {
     "profesyonel servis",
   ],
   openGraph: {
-    title: "Hakkımızda | İstanbul Endüstriyel Mutfak Servisi",
+    title: `Hakkımızda | ${SITE_NAME}`,
     description:
-      "15+ yıl deneyim, 500+ müşteri, profesyonel ekip ve 24/7 acil destek hizmetleri",
-    url: "https://www.example.com/hakkimizda",
-    siteName: "İstanbul Endüstriyel Mutfak Servisi",
+      "15+ yıl deneyim, 500+ müşteri, profesyonel ekip ve 7/24 acil destek hizmetleri",
+    url: canonical("/hakkimizda"),
+    siteName: SITE_NAME,
     locale: "tr_TR",
     type: "website",
   },
   alternates: {
-    canonical: "https://www.example.com/hakkimizda",
+    canonical: "/hakkimizda",
   },
 };
 
@@ -394,6 +395,32 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildBreadcrumbSchema([
+              { name: "Ana Sayfa", url: SITE_URL },
+              { name: "Hakkımızda", url: canonical("/hakkimizda") },
+            ])
+          ),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            name: `Hakkımızda | ${SITE_NAME}`,
+            url: canonical("/hakkimizda"),
+            isPartOf: { "@id": `${SITE_URL}/#website` },
+            about: { "@id": `${SITE_URL}/#organization` },
+          }),
+        }}
+      />
     </main>
   );
 }

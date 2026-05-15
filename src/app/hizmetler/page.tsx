@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTABanner } from "@/components/ui/CTABanner";
 import { services } from "@/data/services";
+import { buildBreadcrumbSchema, canonical, SITE_NAME, SITE_URL } from "@/lib/seo";
 import {
   Flame,
   Utensils,
@@ -26,9 +27,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Hizmetler | İstanbul Endüstriyel Mutfak Servisi",
+  title: "Endüstriyel Mutfak Servis Hizmetleri",
   description:
-    "Endüstriyel mutfak servisi hizmetleri. Ocak, fırın, izgara, fritöz, buzdolabı, bulaşık makinesi onarımı ve bakımı. İstanbul'da 24/7 acil destek.",
+    "Endüstriyel mutfak servisi hizmetleri. Ocak, fırın, izgara, fritöz, buzdolabı, bulaşık makinesi onarımı ve bakımı. İstanbul'da 7/24 acil destek.",
   keywords: [
     "endüstriyel mutfak servisi",
     "ocak servisi",
@@ -40,16 +41,16 @@ export const metadata: Metadata = {
     "İstanbul servis",
   ],
   openGraph: {
-    title: "Hizmetler | İstanbul Endüstriyel Mutfak Servisi",
+    title: `Hizmetlerimiz | ${SITE_NAME}`,
     description:
-      "Ocak, fırın, izgara, fritöz, buzdolabı onarımı ve bakımı. İstanbul'da 24/7 acil destek.",
-    url: "https://istanbulendustriyelmutfakservisi.com/hizmetler",
-    siteName: "İstanbul Endüstriyel Mutfak Servisi",
+      "Ocak, fırın, izgara, fritöz, buzdolabı onarımı ve bakımı. İstanbul'da 7/24 acil destek.",
+    url: canonical("/hizmetler"),
+    siteName: SITE_NAME,
     locale: "tr_TR",
     type: "website",
   },
   alternates: {
-    canonical: "https://istanbulendustriyelmutfakservisi.com/hizmetler",
+    canonical: "/hizmetler",
   },
 };
 
@@ -445,6 +446,45 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "@id": `${canonical("/hizmetler")}/#collectionpage`,
+            url: canonical("/hizmetler"),
+            name: `Hizmetlerimiz | ${SITE_NAME}`,
+            description:
+              "Endüstriyel mutfak servisi hizmetleri. Ocak, fırın, izgara, fritöz, buzdolabı, bulaşık makinesi onarımı ve bakımı.",
+            inLanguage: "tr-TR",
+            isPartOf: { "@id": `${SITE_URL}/#website` },
+            mainEntity: {
+              "@type": "ItemList",
+              numberOfItems: services.length,
+              itemListElement: services.map((s, idx) => ({
+                "@type": "ListItem",
+                position: idx + 1,
+                name: s.name,
+                url: canonical(`/hizmetler/${s.slug}`),
+              })),
+            },
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildBreadcrumbSchema([
+              { name: "Ana Sayfa", url: SITE_URL },
+              { name: "Hizmetler", url: canonical("/hizmetler") },
+            ])
+          ),
+        }}
+      />
     </main>
   );
 }
