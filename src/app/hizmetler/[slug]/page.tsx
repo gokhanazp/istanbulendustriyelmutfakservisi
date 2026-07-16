@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { services } from "@/data/services";
 import { brands } from "@/data/brands";
+import { getBrandServicesByServiceId } from "@/data/brand-services";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTABanner } from "@/components/ui/CTABanner";
 import { BrandLogo } from "@/components/ui/BrandLogo";
@@ -177,6 +178,9 @@ export default async function ServiceDetailPage(
   const relatedServices = services
     .filter((s) => s.category === service.category && s.id !== service.id)
     .slice(0, 4);
+
+  // Bu ekipmana ait marka bazlı servis sayfaları (kombinasyon sayfaları)
+  const relatedBrandServices = getBrandServicesByServiceId(service.id);
 
   const serviceFeatures = [
     {
@@ -476,6 +480,41 @@ export default async function ServiceDetailPage(
                   </Link>
                 );
               })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Marka bazlı servis sayfaları (kombinasyon sayfaları) */}
+      {relatedBrandServices.length > 0 && (
+        <section className="py-14 md:py-20 bg-gradient-to-b from-slate-50 to-white border-t border-slate-100">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full mb-3">
+              <span className="w-2 h-2 bg-orange-600 rounded-full" />
+              <span className="text-sm font-semibold text-orange-600 tracking-wide">
+                MARKA BAZLI SERVİS
+              </span>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+              Markaya Özel {service.name}
+            </h2>
+            <p className="text-slate-600 mb-10 max-w-2xl">
+              Kullandığınız markaya özel detaylı servis bilgisi ve talep için
+              ilgili sayfayı seçebilirsiniz.
+            </p>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {relatedBrandServices.map((bs) => (
+                <Link
+                  key={bs.slug}
+                  href={bs.urlPath}
+                  className="group bg-white border border-slate-200 rounded-2xl p-5 hover:border-orange-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center gap-3"
+                >
+                  <span className="text-sm font-bold text-slate-900 group-hover:text-orange-600 transition-colors flex-1">
+                    {bs.name}
+                  </span>
+                  <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-orange-600 group-hover:translate-x-1 transition-all" />
+                </Link>
+              ))}
             </div>
           </div>
         </section>

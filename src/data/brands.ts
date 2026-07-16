@@ -442,6 +442,22 @@ export const brands: Brand[] = [
     ],
   },
   {
+    id: "proexpert",
+    name: "Proexpert",
+    slug: "proexpert-servisi",
+    description:
+      "Proexpert, endüstriyel bulaşık yıkama sistemlerinde uzmanlaşmış bir markadır. Proexpert bulaşık makinesi, adisyon tipi ve konveyörlü yıkama sistemlerinin bakım onarımını profesyonel ekibimizle gerçekleştirmekteyiz. Yıkama pompası, deterjan ve parlatıcı dozaj pompaları, rezistans ve elektronik kart arızalarında hızlı çözüm sunuyoruz.",
+    services: ["bulasik-makinesi", "deterjan-pompasi"],
+  },
+  {
+    id: "adona",
+    name: "Adona",
+    slug: "adona-servisi",
+    description:
+      "Adona, endüstriyel bulaşık makinesi üretiminde kaliteli çözümler sunan bir markadır. Adona bulaşık makinelerinin bakım, onarım ve periyodik servis işlemlerini deneyimli teknisyenlerimiz yürütmektedir. Yıkama performansı, su ısıtma sistemi ve dozaj pompalarının kontrolünde profesyonel destek sağlıyoruz.",
+    services: ["bulasik-makinesi", "deterjan-pompasi"],
+  },
+  {
     id: "halsan",
     name: "Halsan",
     slug: "halsan-servisi",

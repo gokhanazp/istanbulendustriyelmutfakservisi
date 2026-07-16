@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/data/services";
 import { brands } from "@/data/brands";
+import { brandServices } from "@/data/brand-services";
 import { regions } from "@/data/regions";
 import { blogPosts } from "@/data/blog";
 import { SITE_URL } from "@/lib/seo";
@@ -25,6 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE_URL}/markalar`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/marka-servis`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
@@ -75,6 +82,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const brandServicePages: MetadataRoute.Sitemap = brandServices.map((bs) => ({
+    url: `${SITE_URL}${bs.urlPath}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.75,
+  }));
+
   const regionPages: MetadataRoute.Sitemap = regions.map((r) => ({
     url: `${SITE_URL}/bolgeler/${r.slug}`,
     lastModified: now,
@@ -93,6 +107,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticPages,
     ...servicePages,
     ...brandPages,
+    ...brandServicePages,
     ...regionPages,
     ...blogPages,
   ];
