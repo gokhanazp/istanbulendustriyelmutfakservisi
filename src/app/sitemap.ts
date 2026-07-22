@@ -3,6 +3,7 @@ import { services } from "@/data/services";
 import { brands } from "@/data/brands";
 import { brandServices } from "@/data/brand-services";
 import { regions } from "@/data/regions";
+import { ilceBuzdolabiListesi } from "@/data/ilce-buzdolabi";
 import { blogPosts } from "@/data/blog";
 import { SITE_URL } from "@/lib/seo";
 
@@ -96,6 +97,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const ilceBuzdolabiPages: MetadataRoute.Sitemap = ilceBuzdolabiListesi.map(
+    (i) => ({
+      url: `${SITE_URL}/${i.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    })
+  );
+
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: `${SITE_URL}/blog/${p.slug}`,
     lastModified: p.publishDate ? new Date(p.publishDate) : now,
@@ -109,6 +119,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...brandPages,
     ...brandServicePages,
     ...regionPages,
+    ...ilceBuzdolabiPages,
     ...blogPages,
   ];
 }
