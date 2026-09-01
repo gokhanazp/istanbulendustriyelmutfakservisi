@@ -2,10 +2,12 @@ import { Metadata } from "next";
 import { services } from "@/data/services";
 import { brands } from "@/data/brands";
 import { getBrandServicesByServiceId } from "@/data/brand-services";
+import { getServiceContent } from "@/data/service-content";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTABanner } from "@/components/ui/CTABanner";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { ServiceRichContent } from "@/components/sections/ServiceRichContent";
 import Link from "next/link";
 import {
   buildBreadcrumbSchema,
@@ -68,8 +70,12 @@ export async function generateMetadata(
     service.category,
   ];
 
+  // Docx kaynaklı sayfaların başlığı zaten eksiksiz (marka + telefon içeriyor);
+  // layout'taki "%s | SITE_NAME" şablonu bunu tekrar etmesin diye absolute kullanıyoruz.
+  const hasOwnContent = Boolean(getServiceContent(service.slug));
+
   return {
-    title,
+    title: hasOwnContent ? { absolute: title } : title,
     description,
     keywords,
     openGraph: {
@@ -182,6 +188,9 @@ export default async function ServiceDetailPage(
   // Bu ekipmana ait marka bazlı servis sayfaları (kombinasyon sayfaları)
   const relatedBrandServices = getBrandServicesByServiceId(service.id);
 
+  // Bu hizmete özel uzun form içerik (varsa şablonun varsayılan metnini geçersiz kılar)
+  const content = getServiceContent(service.slug);
+
   const serviceFeatures = [
     {
       icon: <CheckCircle className="w-6 h-6" />,
@@ -205,7 +214,7 @@ export default async function ServiceDetailPage(
     },
   ];
 
-  const faqItems = [
+  const defaultFaqItems = [
     {
       question: `${service.name} ne kadar sıklıkta yapılmalıdır?`,
       answer: `${service.name} hizmetinin sıklığı, ekipmanın yoğunluğu ve kullanım koşullarına göre değişir. Genel olarak aylık veya üç aylık periyodik bakım önerilmektedir. İşletmenizin ihtiyaçlarına göre özel bir bakım planı oluşturabilir ve fiyatlandırma yapabiliriz.`,
@@ -223,6 +232,9 @@ export default async function ServiceDetailPage(
       answer: "Evet, işletmenizin ihtiyaçlarına göre aylık, üç aylık veya yıllık bakım kontratları sunmaktayız. Bu kontratlar sayesinde beklenmeyen arızaların oluşumunu minimize edebilir, ekipmanlarınızın daha uzun süre çalışmasını sağlayabilirsiniz.",
     },
   ];
+
+  const faqItems = content?.faq ?? defaultFaqItems;
+  const faqHeading = content?.faqHeading ?? "Sıkça Sorulan Sorular";
 
   return (
     <main className="w-full">
@@ -295,21 +307,27 @@ export default async function ServiceDetailPage(
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main Content */}
             <div className="lg:col-span-2">
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-                Hizmet Detayları
-              </h2>
-              <div className="prose prose-slate max-w-none">
-                <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                <p className="text-lg text-slate-700 leading-relaxed">
-                  İstanbul Endüstriyel Mutfak Servisi olarak, işletmenizin tüm
-                  ihtiyaçlarını karşılamak için kapsamlı {service.name.toLowerCase()} hizmetleri
-                  sunmaktayız. Ekipmanlarınızın verimli ve güvenli şekilde çalışması
-                  için düzenli bakım ve gerektiğinde acil onarım hizmetlerinden
-                  faydalanabilirsiniz.
-                </p>
-              </div>
+              {content ? (
+                <ServiceRichContent sections={content.sections} />
+              ) : (
+                <>
+                  <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+                    Hizmet Detayları
+                  </h2>
+                  <div className="prose prose-slate max-w-none">
+                    <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                      {service.description}
+                    </p>
+                    <p className="text-lg text-slate-700 leading-relaxed">
+                      İstanbul Endüstriyel Mutfak Servisi olarak, işletmenizin tüm
+                      ihtiyaçlarını karşılamak için kapsamlı {service.name.toLowerCase()} hizmetleri
+                      sunmaktayız. Ekipmanlarınızın verimli ve güvenli şekilde çalışması
+                      için düzenli bakım ve gerektiğinde acil onarım hizmetlerinden
+                      faydalanabilirsiniz.
+                    </p>
+                  </div>
+                </>
+              )}
 
               {/* Features Grid */}
               <div className="grid sm:grid-cols-2 gap-5 mt-10">
@@ -529,7 +547,7 @@ export default async function ServiceDetailPage(
               <span className="text-sm font-semibold text-orange-600 tracking-wide">SSS</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-              Sıkça Sorulan Sorular
+              {faqHeading}
             </h2>
           </div>
 

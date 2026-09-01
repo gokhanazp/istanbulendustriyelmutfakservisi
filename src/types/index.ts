@@ -21,6 +21,22 @@ export interface Service {
   seoKeywords?: string[];
 }
 
+export interface ServiceContentSection {
+  /** Sayfa içi bağlantı için başlık anchor'ı */
+  id: string;
+  /** 2 = ana başlık, 3 = alt başlık */
+  level: 2 | 3;
+  heading: string;
+  /** Satır içi <strong> ve <a> etiketleri içerebilen paragraflar */
+  paragraphs: string[];
+}
+
+export interface ServiceContent {
+  sections: ServiceContentSection[];
+  faqHeading: string;
+  faq: FAQ[];
+}
+
 export interface Region {
   name: string;
   slug: string;

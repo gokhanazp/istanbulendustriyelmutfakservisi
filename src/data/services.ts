@@ -20,11 +20,12 @@ export const services: Service[] = [
     slug: "endustriyel-firin-servisi",
     shortDescription: "Endüstriyel fırınların kurulum, bakım ve acil onarımları",
     description:
-      "Fırın ve pizza fırınları da dahil olmak üzere tüm endüstriyel fırın modellerinin bakım, onarım ve kalibrasyonu için hizmet vermekteyiz. Elektrikli, gazlı ve kombineli fırınlarda sorunlar yaşadığında 24/7 acil destek hizmetimize başvurabilirsiniz. Fırınların ısıtma performansını kontrol edip gerekli ayarlamaları yaparak yemek kalitesini artırırız.",
+      "Fırının pişirme sırasında sıcaklığı sabit tutmaması veya istenen dereceye ulaşmaması, mutfak operasyonunu doğrudan etkiler. Pastane, restoran, otel veya catering firmasında fırın arızası, üretim aksaması ve müşteri memnuniyetsizliği demektir. Endüstriyel fırın servisi arayışında olan profesyoneller için Çınar Endüstriyel Mutfak Servisi olarak, İstanbul'da 15 yıldır profesyonel mutfak ekipmanlarına teknik destek sağlıyoruz. İstanbul'un tüm Avrupa ve Anadolu ilçelerinde 7/24 acil servis hizmeti veriyoruz.",
     icon: "fire",
     category: "pisirme",
-    seoTitle: "Endüstriyel Fırın Tamiri & Servisi İstanbul | 7/24 Acil Müdahale",
-    seoDescription: "İstanbul'da endüstriyel fırın tamiri, endüstriyel fırın servisi ve bakımı. Endüstriyel fırın tamircisi ekibimiz elektrikli, gazlı ve kombineli fırınlarda 7/24 acil onarım hizmeti sunuyor.",
+    seoTitle: "Endüstriyel Fırın Servisi İstanbul | 0501 300 1981",
+    seoDescription:
+      "Endüstriyel fırın servisi için İstanbul'da 7/24 acil servis. Rational, Öztiryakiler, Empero marka fırınlarda teknik destek.",
     seoKeywords: ["endüstriyel fırın servisi", "endüstriyel fırın tamiri", "endüstriyel fırın tamircisi", "endüstriyel fırın bakımı", "endüstriyel fırın arızası", "endüstriyel fırın onarımı", "endüstriyel fırın ustası", "İstanbul endüstriyel fırın servisi"],
   },
   {
