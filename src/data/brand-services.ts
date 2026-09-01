@@ -260,7 +260,52 @@ const combos: { brandId: string; equipment: EquipmentKey }[] = [
   { brandId: "adona", equipment: "bulasik-makinesi" },
   { brandId: "crystal", equipment: "bulasik-makinesi" },
   { brandId: "ndustrio", equipment: "bulasik-makinesi" },
+
+  { brandId: "elektrolux", equipment: "firin" },
 ];
+
+/**
+ * URL'de kullanılacak marka eki. Varsayılan olarak Brand.slug'dan türetilir;
+ * yazımı farklı olması istenen markalar burada override edilir.
+ * (Elektrolüx markasının sayfa URL'lerinde "electrolux" yazımı tercih edildi.)
+ */
+const brandSegmentOverrides: Record<string, string> = {
+  elektrolux: "electrolux",
+};
+
+/**
+ * Docx kaynaklı sayfaların kendi meta başlık/açıklaması.
+ * Anahtar = BrandService.slug. Kaydı olmayan sayfalar otomatik üretilen
+ * meta'yı kullanmaya devam eder.
+ */
+const seoOverrides: Record<string, { title: string; description: string }> = {
+  "empero-firin-servisi": {
+    title: "Empero Fırın Servisi İstanbul | 0501 300 1981",
+    description:
+      "Empero fırın servisi için İstanbul'da 7/24 acil servis. Fırın, ocak tamiri, bakım ve onarım. Profesyonel çözüm.",
+  },
+  "empero-bulasik-makinesi-servisi": {
+    title: "Empero Bulaşık Makinesi Yetkili Servis | 0501 300 1981",
+    description:
+      "Empero bulaşık makinesi servisi arıyorsanız profesyonel destek. Periyodik bakım, acil tamir, yedek parça. 15 yıllık tecrübe.",
+  },
+  "oztiryakiler-firin-servisi": {
+    title: "Öztiryakiler Fırın Servisi İstanbul | 0501 300 1981",
+    description:
+      "Öztiryakiler fırın servisi için İstanbul'da 7/24 acil servis. Fırın tamiri, bakım, yedek parça. Profesyonel çözüm.",
+  },
+  "oztiryakiler-bulasik-makinesi-servisi": {
+    title: "Öztiryakiler Bulaşık Makinesi Servisi İstanbul | 0501 300 1981",
+    description:
+      "Öztiryakiler bulaşık makinesi servisi için İstanbul'da 7/24 acil servis. Profesyonel teknik destek, hızlı çözüm. Hemen arayın.",
+  },
+  // docx'teki meta sehven Öztiryakiler'den kopyalanmıştı; marka adı düzeltildi
+  "electrolux-firin-servisi": {
+    title: "Electrolux Fırın Servisi İstanbul | 0501 300 1981",
+    description:
+      "Electrolux fırın servisi için İstanbul'da 7/24 acil servis. Fırın tamiri, bakım, yedek parça. Profesyonel çözüm. Hemen arayın.",
+  },
+};
 
 function slugBase(brandSlug: string): string {
   return brandSlug.replace(/-servisi$/, "");
@@ -297,7 +342,7 @@ export const brandServices: BrandService[] = combos.map(
       throw new Error(`brand-services: '${brandId}' markası bulunamadı.`);
     }
     const def = equipmentDefs[equipment];
-    const base = slugBase(brand.slug);
+    const base = brandSegmentOverrides[brand.id] ?? slugBase(brand.slug);
     const slug = `${base}-${def.slugPart}-servisi`;
     const brandSegment = `${base}-servis`;
     const name = `${brand.name} ${def.label} Servisi`;
@@ -319,8 +364,12 @@ export const brandServices: BrandService[] = combos.map(
       symptoms: def.symptoms,
       parts: def.parts,
       faq: buildFaq(brand.name, def),
-      seoTitle: `${name} İstanbul | ${def.label} Tamiri & Bakımı 7/24`,
-      seoDescription: `İstanbul'da ${brand.name} ${def.labelLower} servisi, ${brand.name} ${def.labelLower} tamiri ve bakımı. ${brand.name} ${def.labelLower} arızalarında 7/24 aynı gün müdahale, orijinal yedek parça ve 6 ay garanti.`,
+      seoTitle:
+        seoOverrides[slug]?.title ??
+        `${name} İstanbul | ${def.label} Tamiri & Bakımı 7/24`,
+      seoDescription:
+        seoOverrides[slug]?.description ??
+        `İstanbul'da ${brand.name} ${def.labelLower} servisi, ${brand.name} ${def.labelLower} tamiri ve bakımı. ${brand.name} ${def.labelLower} arızalarında 7/24 aynı gün müdahale, orijinal yedek parça ve 6 ay garanti.`,
       seoKeywords: [
         `${brand.name} ${def.labelLower} servisi`,
         `${brand.name} ${def.labelLower} tamiri`,
@@ -335,6 +384,11 @@ export const brandServices: BrandService[] = combos.map(
     };
   }
 );
+
+/** Sayfanın meta başlığı docx'ten mi geliyor (layout şablonu eklenmemeli). */
+export function hasSeoOverride(slug: string): boolean {
+  return slug in seoOverrides;
+}
 
 export function getBrandServicesByBrand(brandId: string): BrandService[] {
   return brandServices.filter((bs) => bs.brandId === brandId);

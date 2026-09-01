@@ -2,10 +2,12 @@ import { Metadata } from "next";
 import { brands } from "@/data/brands";
 import { services } from "@/data/services";
 import { getBrandServicesByBrand } from "@/data/brand-services";
+import { getBrandContent } from "@/data/brand-content";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTABanner } from "@/components/ui/CTABanner";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { RichContent } from "@/components/sections/RichContent";
 import Link from "next/link";
 import {
   canonical,
@@ -23,6 +25,7 @@ import {
   Phone,
   MessageCircle,
   ChevronRight,
+  ChevronDown,
   Flame,
   Utensils,
   Droplet,
@@ -60,9 +63,16 @@ export async function generateMetadata(
     return { title: "Marka Bulunamadı" };
   }
 
+  const title = brand.seoTitle || `${brand.name} Servisi - İstanbul | ${SITE_NAME}`;
+  const description = brand.seoDescription || brand.description;
+
+  // Docx kaynaklı sayfaların başlığı zaten eksiksiz (marka + telefon içeriyor);
+  // layout'taki "%s | SITE_NAME" şablonu bunu tekrar etmesin diye absolute kullanıyoruz.
+  const hasOwnContent = Boolean(getBrandContent(brand.slug));
+
   return {
-    title: `${brand.name} Servisi - İstanbul | ${SITE_NAME}`,
-    description: brand.description,
+    title: hasOwnContent ? { absolute: title } : title,
+    description,
     keywords: [
       `${brand.name} servisi`,
       `${brand.name} İstanbul servis`,
@@ -72,8 +82,8 @@ export async function generateMetadata(
       "İstanbul",
     ],
     openGraph: {
-      title: `${brand.name} Servisi - İstanbul | ${SITE_NAME}`,
-      description: brand.description,
+      title,
+      description,
       url: canonical(`/markalar/${brand.slug}`),
       siteName: SITE_NAME,
       locale: "tr_TR",
@@ -136,6 +146,9 @@ export default async function BrandDetailPage(props: BrandDetailPageProps) {
 
   // Marka bazlı ekipman servis sayfaları (kombinasyon sayfaları)
   const brandServicePages = getBrandServicesByBrand(brand.id);
+
+  // Bu markaya özel uzun form içerik (varsa şablonun varsayılan metnini geçersiz kılar)
+  const content = getBrandContent(brand.slug);
 
   // Get services offered by this brand
   const brandServices = services.filter((service) => {
@@ -324,21 +337,27 @@ export default async function BrandDetailPage(props: BrandDetailPageProps) {
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main Content */}
             <div className="lg:col-span-2">
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-                {brand.name} Hakkında
-              </h2>
-              <div className="space-y-4">
-                <p className="text-lg text-slate-700 leading-relaxed">
-                  {brand.description}
-                </p>
-                <p className="text-lg text-slate-700 leading-relaxed">
-                  İstanbul genelinde {brand.name} markalı tüm ekipmanlarınız
-                  için acil ve periyodik servis hizmeti sunmaktayız. Deneyimli
-                  teknisyenlerimiz, orijinal yedek parçalar ve profesyonel
-                  çalışma tarzımız sayesinde ekipmanlarınızın optimal
-                  performansını sürdürmenizi sağlarız.
-                </p>
-              </div>
+              {content ? (
+                <RichContent sections={content.sections} />
+              ) : (
+                <>
+                  <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+                    {brand.name} Hakkında
+                  </h2>
+                  <div className="space-y-4">
+                    <p className="text-lg text-slate-700 leading-relaxed">
+                      {brand.description}
+                    </p>
+                    <p className="text-lg text-slate-700 leading-relaxed">
+                      İstanbul genelinde {brand.name} markalı tüm ekipmanlarınız
+                      için acil ve periyodik servis hizmeti sunmaktayız. Deneyimli
+                      teknisyenlerimiz, orijinal yedek parçalar ve profesyonel
+                      çalışma tarzımız sayesinde ekipmanlarınızın optimal
+                      performansını sürdürmenizi sağlarız.
+                    </p>
+                  </div>
+                </>
+              )}
 
               {/* Why Choose Us - inline */}
               <div className="grid sm:grid-cols-2 gap-5 mt-10">
@@ -612,6 +631,42 @@ export default async function BrandDetailPage(props: BrandDetailPageProps) {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      {content && content.faq.length > 0 && (
+        <section className="py-14 md:py-20 bg-slate-50 border-t border-slate-100">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full mb-6">
+                <span className="w-2 h-2 bg-orange-600 rounded-full" />
+                <span className="text-sm font-semibold text-orange-600 tracking-wide">
+                  SSS
+                </span>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+                {content.faqHeading}
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {content.faq.map((faq, index) => (
+                <details
+                  key={index}
+                  className="group bg-white rounded-2xl border border-slate-200 hover:border-orange-300 transition-colors overflow-hidden"
+                >
+                  <summary className="flex items-center justify-between p-6 cursor-pointer font-semibold text-slate-900 group-hover:text-orange-600 transition-colors">
+                    <span className="flex-1 pr-4">{faq.question}</span>
+                    <ChevronDown className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform flex-shrink-0" />
+                  </summary>
+                  <div className="px-6 pb-6 -mt-2">
+                    <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Contact Form Section */}
       <section className="py-14 md:py-20 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -683,6 +738,26 @@ export default async function BrandDetailPage(props: BrandDetailPageProps) {
         title={`${brand.name} Servis Hizmeti İçin Hemen İletişime Geçin`}
         description="İstanbul genelinde 7/24 acil müdahale ve periyodik bakım hizmetleri sunmaktayız."
       />
+
+      {content && content.faq.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: content.faq.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer,
+                },
+              })),
+            }),
+          }}
+        />
+      )}
 
       <script
         type="application/ld+json"

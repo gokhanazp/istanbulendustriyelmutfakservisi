@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { BrandService } from "@/data/brand-services";
-import { getBrandServicesByBrand } from "@/data/brand-services";
+import { getBrandServicesByBrand, hasSeoOverride } from "@/data/brand-services";
+import { getBrandServiceContent } from "@/data/brand-service-content";
 import { brands } from "@/data/brands";
 import { services } from "@/data/services";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTABanner } from "@/components/ui/CTABanner";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { RichContent } from "@/components/sections/RichContent";
 import {
   buildBreadcrumbSchema,
   canonical,
@@ -73,7 +75,9 @@ const equipmentToServiceSlug: Record<string, string> = {
 
 export function buildBrandServiceMetadata(item: BrandService): Metadata {
   return {
-    title: item.seoTitle,
+    // Docx kaynaklı başlıklar zaten eksiksiz (marka + telefon içeriyor);
+    // layout'taki "%s | SITE_NAME" şablonu bunu tekrar etmesin.
+    title: hasSeoOverride(item.slug) ? { absolute: item.seoTitle } : item.seoTitle,
     description: item.seoDescription,
     keywords: item.seoKeywords,
     openGraph: {
@@ -98,8 +102,13 @@ export function BrandServiceDetail({ item }: { item: BrandService }) {
     (bs) => bs.slug !== item.slug
   );
 
+  // Bu sayfaya özel uzun form içerik (varsa şablonun varsayılan metnini geçersiz kılar)
+  const content = getBrandServiceContent(item.slug);
+
   const generalServiceSlug = equipmentToServiceSlug[item.equipment];
   const generalService = services.find((s) => s.slug === generalServiceSlug);
+
+  const faqItems = content && content.faq.length > 0 ? content.faq : item.faq;
 
   const whyChooseUs = [
     {
@@ -256,17 +265,23 @@ export function BrandServiceDetail({ item }: { item: BrandService }) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-                {item.name} Hakkında
-              </h2>
-              <div className="space-y-4">
-                <p className="text-lg text-slate-700 leading-relaxed">
-                  {item.intro}
-                </p>
-                <p className="text-lg text-slate-700 leading-relaxed">
-                  {item.detail}
-                </p>
-              </div>
+              {content ? (
+                <RichContent sections={content.sections} />
+              ) : (
+                <>
+                  <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+                    {item.name} Hakkında
+                  </h2>
+                  <div className="space-y-4">
+                    <p className="text-lg text-slate-700 leading-relaxed">
+                      {item.intro}
+                    </p>
+                    <p className="text-lg text-slate-700 leading-relaxed">
+                      {item.detail}
+                    </p>
+                  </div>
+                </>
+              )}
 
               {/* Symptoms & Parts */}
               <div className="grid md:grid-cols-2 gap-6 mt-10">
@@ -503,11 +518,13 @@ export function BrandServiceDetail({ item }: { item: BrandService }) {
               </span>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-              {item.name} — Sıkça Sorulan Sorular
+              {content
+                ? `${item.name} — ${content.faqHeading}`
+                : `${item.name} — Sıkça Sorulan Sorular`}
             </h2>
           </div>
           <div className="space-y-4">
-            {item.faq.map((f, i) => (
+            {faqItems.map((f, i) => (
               <details
                 key={i}
                 className="group bg-white rounded-2xl border border-slate-200 hover:border-orange-300 transition-colors overflow-hidden"
@@ -656,7 +673,7 @@ export function BrandServiceDetail({ item }: { item: BrandService }) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: item.faq.map((f) => ({
+            mainEntity: faqItems.map((f) => ({
               "@type": "Question",
               name: f.question,
               acceptedAnswer: { "@type": "Answer", text: f.answer },

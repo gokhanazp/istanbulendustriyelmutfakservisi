@@ -7,7 +7,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTABanner } from "@/components/ui/CTABanner";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { ContactForm } from "@/components/forms/ContactForm";
-import { ServiceRichContent } from "@/components/sections/ServiceRichContent";
+import { RichContent } from "@/components/sections/RichContent";
 import Link from "next/link";
 import {
   buildBreadcrumbSchema,
@@ -308,7 +308,7 @@ export default async function ServiceDetailPage(
             {/* Main Content */}
             <div className="lg:col-span-2">
               {content ? (
-                <ServiceRichContent sections={content.sections} />
+                <RichContent sections={content.sections} />
               ) : (
                 <>
                   <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">

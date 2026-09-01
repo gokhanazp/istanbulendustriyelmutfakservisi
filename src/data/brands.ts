@@ -38,7 +38,10 @@ export const brands: Brand[] = [
     slug: "empero-servisi",
     logo: "/markalarimiz/empero.png",
     description:
-      "Empero, Türkiye'nin önde gelen endüstriyel mutfak ekipmanları markasıdır ve yüksek kaliteli ürünleriyle bilinmektedir. Empero ocak, fırın, izgara, fritöz, buzdolabı ve bulaşık makinesi gibi ürünlerinin bakım onarımında deneyimli bir servis ağına sahibiz. Gaz sistemi, pompası ve benmari servisleri gibi tüm ihtiyaçlarınız için tek çağrı ile çözüm sunuyoruz.",
+      "Yoğun çalışan bir mutfakta bulaşık makinesinin program ortasında durması veya fırının istenen sıcaklığa ulaşmaması, günlük iş akışını doğrudan etkiler. Restoran ve catering işletmelerinde arızaya hızlı müdahale bu yüzden önemli. Empero servisi arayışında olan profesyoneller için Çınar Endüstriyel Mutfak Servisi olarak, İstanbul'da 15 yıldır profesyonel mutfak ekipmanlarına teknik destek sağlıyoruz. İstanbul'un tüm Avrupa ve Anadolu ilçelerinde 7/24 acil servis hizmeti veriyoruz.",
+    seoTitle: "Empero Servisi | 7/24 Acil Servis İstanbul - 0501 300 1981",
+    seoDescription:
+      "Empero servisi için İstanbul'da 7/24 acil servis. Bulaşık makinesi, fırın, ocak, buzdolabı arızalarında teknik destek. Profesyonel çözüm.",
     services: [
       "ocak",
       "firin",
@@ -61,7 +64,10 @@ export const brands: Brand[] = [
     logo: "/markalarimiz/inoksan.svg",
     logoDark: true,
     description:
-      "İnoksan, Türk endüstriyel mutfak sektöründe saygın bir marka olarak kalite ve dayanıklılığın sembolüdür. İnoksan ürünlerinin tüm servisi, onarımı ve bakımını yapmak üzere eğitimli teknisyenlerimiz hazır durumdadır. Ocak, fırın, buzdolabı ve gaz sistemi gibi kritik bileşenlerin sorunlarında acil destek sağlarız.",
+      "Yoğun çalışan bir mutfakta bulaşık makinesinin program ortasında durması veya fırının istenen sıcaklığa ulaşmaması, günlük iş akışını doğrudan etkiler. Restoran ve catering işletmelerinde arızaya hızlı müdahale bu yüzden önemli. İnoksan servisi arayışında olan profesyoneller için Çınar Endüstriyel Mutfak Servisi olarak, İstanbul'da 15 yıldır profesyonel mutfak ekipmanlarına teknik destek sağlıyoruz. İstanbul'un tüm Avrupa ve Anadolu ilçelerinde 7/24 acil servis hizmeti veriyoruz.",
+    seoTitle: "İnoksan Servisi İstanbul | 0501 300 1981",
+    seoDescription:
+      "İnoksan servisi için İstanbul'da 7/24 acil servis. Bulaşık makinesi, fırın, ocak, buzdolabı arızalarında profesyonel teknik destek. Hemen arayın.",
     services: [
       "ocak",
       "firin",
@@ -83,7 +89,10 @@ export const brands: Brand[] = [
     slug: "oztiryakiler-servisi",
     logo: "/markalarimiz/oztiryakiler.svg",
     description:
-      "Öztiryakiler, endüstriyel mutfak ekipmanlarında yerli ve güvenilir bir üreticidir. Öztiryakiler markalı ocak, fırın, izgara, fritöz, buzdolabı, bulaşık makinesi ve diğer mutfak ekipmanlarının bakım onarımını profesyonelce yürütmekteyiz. Gaz kaçağı tespiti, pompası servisleri ve benmari bakımı da kapsamlı hizmet paketimizin içinde yer almaktadır.",
+      "Öğle servisi bitmiş, mutfakta temizlik başlamış. Tam o sırada bulaşık makinesi duruyor. Ya da akşam 9'da, rezervasyonlar dolu, fırın birden soğumaya başlıyor. Bu tür anlarda Öztiryakiler servisi arayışı panikle başlar. Çınar Endüstriyel Mutfak Teknik Servis olarak bu panik hallerine defalarca şahit olduk. Telefonun diğer ucundaki sesin titrediğini duymak, işin ne kadar kritik olduğunu gösteriyor.",
+    seoTitle: "Öztiryakiler Servisi İstanbul | 0501 300 1981",
+    seoDescription:
+      "Öztiryakiler servisi için İstanbul'da 7/24 acil servis. Bulaşık makinesi, fırın, ocak, buzdolabı arızalarında teknik destek.",
     services: [
       "ocak",
       "firin",

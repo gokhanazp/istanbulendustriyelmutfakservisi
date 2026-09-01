@@ -125,11 +125,12 @@ export const services: Service[] = [
     slug: "endustriyel-bulasik-makinesi-servisi",
     shortDescription: "Toplu bulaşık yıkama makinelerinin bakım ve onarımı",
     description:
-      "Otel, lokanta ve toplu yemek servisi yapan işletmelerin yoğun kullanımına dayanacak şekilde imal edilen endüstriyel bulaşık makinelerinin bakım ve onarım hizmetlerini sunuyoruz. Spray vanası, yıkama pompası, kurutma sistemi ve elektronik kontrol paneli gibi bileşenlerin arızalarını gideriyoruz. Deterjan pompası, filtre sistemleri ve su ısıtıcılarının performansını kontrol edip optimize ederiz.",
+      "Yoğun çalışan bir mutfakta bulaşık makinesinin program ortasında durması, günlük iş akışını doğrudan etkiler. Restoran, catering firması veya kafede temizlik sürecinin aksaması, hijyen sorunlarına ve müşteri memnuniyetsizliğine yol açabilir. Endüstriyel bulaşık makinesi servisi arayışında olan profesyoneller için Çınar Endüstriyel Mutfak Servisi olarak, İstanbul'da 15 yıldır profesyonel mutfak ekipmanlarına teknik destek sağlıyoruz. İstanbul'un tüm Avrupa ve Anadolu ilçelerinde 7/24 acil servis hizmeti veriyoruz.",
     icon: "droplet",
     category: "yikama",
-    seoTitle: "Endüstriyel Bulaşık Makinesi Tamiri & Servisi İstanbul | 7/24",
-    seoDescription: "İstanbul'da endüstriyel bulaşık makinesi tamiri, bulaşık makinesi servisi ve bakımı. Endüstriyel bulaşık makinesi tamircisi ekibimiz pompa, motor ve elektronik arızalarda 7/24 hizmet veriyor.",
+    seoTitle: "Endüstriyel Bulaşık Makinesi Servisi İstanbul | 0501 300 1981",
+    seoDescription:
+      "Endüstriyel bulaşık makinesi servisi için İstanbul'da 7/24 acil servis. Fagor, Empero, Selidos, Portabianco marka cihazlarda teknik destek.",
     seoKeywords: ["endüstriyel bulaşık makinesi servisi", "endüstriyel bulaşık makinesi tamiri", "endüstriyel bulaşık makinesi tamircisi", "bulaşık makinesi bakımı", "bulaşık makinesi arızası", "İstanbul endüstriyel bulaşık makinesi servisi"],
   },
   {

@@ -1,12 +1,12 @@
-import { ServiceContent } from "@/types";
+import { RichContent } from "@/types";
 
 /**
  * Hizmet sayfalarına özel uzun form içerik.
  * Kaynak: public/yenisayfa/*.docx — metinler birebir aktarılmıştır.
- * Anahtar = Service.slug. Kaydı olmayan hizmetler şablonun varsayılan
+ * Anahtar = Service.slug. Kaydı olmayan sayfalar şablonun varsayılan
  * metnini kullanmaya devam eder.
  */
-export const serviceContent: Record<string, ServiceContent> = {
+export const serviceContent: Record<string, RichContent> = {
   "endustriyel-firin-servisi": {
     sections: [
       {
@@ -146,7 +146,7 @@ export const serviceContent: Record<string, ServiceContent> = {
         level: 2,
         heading: "Electrolux Fırın Servisi",
         paragraphs: [
-          "Electrolux, profesyonel mutfak ekipmanları sektöründe dünya çapında tanınan bir markadır. Yüksek kaliteli konveksiyonel fırınlar, pizza fırınları ve kombine modelleriyle catering firmaları, oteller ve büyük ölçekli mutfaklar tarafından tercih edilir. <strong>Electrolux fırın servisi</strong> arayışında olan profesyoneller için Çınar Endüstriyel Mutfak Servisi olarak, 15 yıllık tecrübemizle teknik destek sağlıyoruz.",
+          "Electrolux, profesyonel mutfak ekipmanları sektöründe dünya çapında tanınan bir markadır. Yüksek kaliteli konveksiyonel fırınlar, pizza fırınları ve kombine modelleriyle catering firmaları, oteller ve büyük ölçekli mutfaklar tarafından tercih edilir. <strong><a href=\"/electrolux-servis/electrolux-firin-servisi\">Electrolux fırın servisi</a></strong> arayışında olan profesyoneller için Çınar Endüstriyel Mutfak Servisi olarak, 15 yıllık tecrübemizle teknik destek sağlıyoruz.",
           "Electrolux fırınlarında sıcaklık kalibrasyonu, kontrol kartı arızaları, ısıtıcı eleman değişimi ve fan sistemi bakımı konularında uzmanlaşmış ekibimizle hizmet veriyoruz. Orijinal yedek parça garantisi, işçilik garantisi ve periyodik bakım programlarımızla fırınınızın maksimum verimlilikte çalışmasını sağlıyoruz. İstanbul'un tüm Avrupa ve Anadolu ilçelerinde 7/24 acil servis desteği sunuyoruz.",
         ],
       },
@@ -356,8 +356,218 @@ export const serviceContent: Record<string, ServiceContent> = {
       },
     ],
   },
+  "endustriyel-bulasik-makinesi-servisi": {
+    sections: [
+      {
+        id: "endustriyel-bulasik-makinesi-servisi-profesyonel-cozumler",
+        level: 2,
+        heading: "Endüstriyel Bulaşık Makinesi Servisi: Profesyonel Çözümler",
+        paragraphs: [
+          "Yoğun çalışan bir mutfakta bulaşık makinesinin program ortasında durması, günlük iş akışını doğrudan etkiler. Restoran, catering firması veya kafede temizlik sürecinin aksaması, hijyen sorunlarına ve müşteri memnuniyetsizliğine yol açabilir. Endüstriyel bulaşık makinesi servisi arayışında olan profesyoneller için Çınar Endüstriyel Mutfak Servisi olarak, İstanbul'da 15 yıldır profesyonel mutfak ekipmanlarına teknik destek sağlıyoruz. İstanbul'un tüm Avrupa ve Anadolu ilçelerinde 7/24 acil servis hizmeti veriyoruz.",
+        ],
+      },
+      {
+        id: "neden-profesyonel-servis-onemli",
+        level: 2,
+        heading: "Neden Profesyonel Servis Önemli?",
+        paragraphs: [
+          "Servis çağrılarında önce cihazın modelini ve yaşanan sorunu öğreniyoruz. Aynı belirti farklı parçalardan kaynaklanabilir. Çalışmayan bir bulaşık makinesinde sorun elektrik beslemesinden kaynaklanabileceği gibi pompa, kapak emniyeti veya kontrol kartında da olabilir.",
+          "Restoran, otel, catering firması veya kafede bulaşık makinesinin arızalanması, işletmenizin durmasına neden olur. Sadece arızayı gidermek yetmez. Sorunun neden oluştuğunu da bulmak gerekir. Yoğun kullanılan ekipmanlarda bakım ihmal edildiğinde aynı sorun kısa süre içinde tekrar ortaya çıkabilir.",
+          "Bir cihazın arızalı kalması, tamir maliyetinin yanında iş kaybı ve operasyonel aksamalar anlamına gelir.",
+        ],
+      },
+      {
+        id: "endustriyel-bulasik-makinesi-tamiri",
+        level: 2,
+        heading: "Endüstriyel Bulaşık Makinesi Tamiri",
+        paragraphs: [
+          "\"Bulaşık makinesi su almıyor\" şikayetiyle sık karşılaşıyoruz. Genelde su giriş vanası tıkalı veya şebeke basıncı düşük. Bir kafede makine çalışıyor ama suyu ısıtmıyordu. Rezistans sağlamdı, ama termostat yanlış okuma yapıyordu. Değiştirdik, sorun çözüldü.",
+          "Bulaşık makinesinde su basıncı, tıkanıklık ve pompa kaynaklı sorunlarla sık karşılaşıyoruz. Isıtma problemi olduğunda rezistans, termostat ve kontrol kartı kontrol ediliyor.",
+          "Yıkama performansı düştüğünde ilk kontrol ettiğimiz noktalar püskürtme kolları, filtreler ve deterjan dozaj sistemi. Filtrelerde biriken kalıntılar, makinenin yıkama performansını kısa sürede etkileyebiliyor. Kontrol paneli, sensör veya programlama kaynaklı elektronik arızalarda cihazın hata kodları ve çalışma değerleri kontrol edilerek arızanın kaynağı belirleniyor.",
+          "Makinenin altından su gelmesi durumunda kapı contaları, hortum bağlantıları ve tahliye hattı kontrol ediliyor. Kaçağın kaynağı belirlendikten sonra gerekli müdahale yapılıyor. Endüstriyel bulaşık makinesi tamircisi olarak, bu tür sorunlara hızlı ve kalıcı çözümler sunuyoruz.",
+        ],
+      },
+      {
+        id: "sanayi-tipi-bulasik-makinesi-servisi",
+        level: 2,
+        heading: "Sanayi Tipi Bulaşık Makinesi Servisi",
+        paragraphs: [
+          "Sanayi tipi bulaşık makineleri, profesyonel mutfakların en çok kullanılan ekipmanları arasındadır. Günde yüzlerce tabağın yıkanması, dezenfekte edilmesi ve hijyen standartlarının sağlanması, bu cihazların kesintisiz çalışmasına bağlıdır.",
+          "Fagor bulaşık makinesi servisleri kapsamında, Fagor marka sanayi tipi bulaşık makinelerine teknik destek sağlıyoruz. Empero bulaşık makinesi servisi için de aynı şekilde, Empero marka cihazlarda arıza tespiti, bakım ve onarım çalışmalarını gerçekleştiriyoruz.",
+          "Selidos bulaşık makinesi servis taleplerinde, Selidos marka profesyonel bulaşık makinelerinde yaşanan sorunlara çözüm üretiyoruz. Portabianco bulaşık makinesi servisi için de Portabianco marka cihazlarda arıza tespiti ve onarım hizmeti veriyoruz.",
+          "Her marka için orijinal yedek parça kullanarak, cihazınızın uzun ömürlü olmasını ve garanti koşullarının korunmasını sağlıyoruz.",
+        ],
+      },
+      {
+        id: "marka-bazli-servis-hizmetlerimiz",
+        level: 2,
+        heading: "Marka Bazlı Servis Hizmetlerimiz",
+        paragraphs: [
+          "Endüstriyel mutfak sektörünün önde gelen markalarına profesyonel servis hizmeti sunuyoruz. Her marka için özel teknik bilgi ve orijinal yedek parça ile çalışıyoruz.",
+        ],
+      },
+      {
+        id: "empero-bulasik-makinesi-servisi",
+        level: 3,
+        heading: "Empero Bulaşık Makinesi Servisi",
+        paragraphs: [
+          "Empero marka endüstriyel bulaşık makinelerinde arıza tespiti, bakım ve onarım hizmetleri sunuyoruz. Pompa, ısıtıcı, elektronik kart ve su sistemleri arızalarında hızlı çözüm sağlıyoruz. Orijinal yedek parça ile cihazınızın uzun ömürlü olmasını garanti ediyoruz.",
+        ],
+      },
+      {
+        id: "inoksan-bulasik-makinesi-servisi",
+        level: 3,
+        heading: "İnoksan Bulaşık Makinesi Servisi",
+        paragraphs: [
+          "İnoksan marka cihazlarda teknik destek, periyodik bakım ve acil onarım işlemleri gerçekleştiriyoruz. Su almama, ısıtmama ve yıkama performansı düşüklüğü gibi sorunlara kalıcı çözümler üretiyoruz. Yetkili servis standartlarında hizmet veriyoruz.",
+        ],
+      },
+      {
+        id: "oztiryakiler-bulasik-makinesi-servisi",
+        level: 3,
+        heading: "Öztiryakiler Bulaşık Makinesi Servisi",
+        paragraphs: [
+          "Öztiryakiler marka bulaşık makinelerine özel servis hizmeti veriyor, cihazlarınızın uzun ömürlü olmasını garanti altına alıyoruz. Elektronik kart, termostat ve pompa arızalarında profesyonel müdahale sağlıyoruz.",
+        ],
+      },
+      {
+        id: "kayalar-bulasik-makinesi-servisi",
+        level: 3,
+        heading: "Kayalar Bulaşık Makinesi Servisi",
+        paragraphs: [
+          "Kayalar marka endüstriyel bulaşık makinelerinde arıza giderme ve bakım hizmetleri sunuyoruz. Su kaçakları, filtre temizliği ve deterjan dozaj sistemi ayarları konusunda teknik destek veriyoruz.",
+        ],
+      },
+      {
+        id: "maksan-bulasik-makinesi-servisi",
+        level: 3,
+        heading: "Maksan Bulaşık Makinesi Servisi",
+        paragraphs: [
+          "Maksan marka cihazlarda hızlı ve güvenilir teknik servis desteği sağlıyoruz. Arıza tespiti, yedek parça değişimi ve periyodik bakım hizmetleri ile işletmenizin operasyonel aksamalarını önlüyoruz.",
+        ],
+      },
+      {
+        id: "portabianco-bulasik-makinesi-servisi",
+        level: 3,
+        heading: "Portabianco Bulaşık Makinesi Servisi",
+        paragraphs: [
+          "Portabianco marka profesyonel bulaşık makinelerinde arıza tespiti ve onarım hizmeti veriyoruz. Yıkama performansı optimizasyonu ve sıcaklık kontrolü konularında uzmanlaşmış ekibimizle hizmetinizdeyiz.",
+        ],
+      },
+      {
+        id: "electrolux-bulasik-makinesi-servisi",
+        level: 3,
+        heading: "Electrolux Bulaşık Makinesi Servisi",
+        paragraphs: [
+          "Electrolux marka endüstriyel bulaşık makinelerine yetkili servis standartlarında teknik destek sağlıyoruz. Elektronik kontrol sistemleri, ısıtıcı elemanlar ve su sirkülasyon sistemleri konusunda profesyonel çözümler sunuyoruz.",
+        ],
+      },
+      {
+        id: "ndustrio-bulasik-makinesi-servisi",
+        level: 3,
+        heading: "Ndustrio Bulaşık Makinesi Servisi",
+        paragraphs: [
+          "Ndustrio marka cihazlarda arıza tespiti, bakım ve onarım çalışmalarını profesyonel ekibimizle gerçekleştiriyoruz. Hızlı müdahale ve şeffaf fiyatlandırma ile müşteri memnuniyetini önceliyoruz.",
+        ],
+      },
+      {
+        id: "hizmet-verdigimiz-cihaz-turleri",
+        level: 2,
+        heading: "Hizmet Verdiğimiz Cihaz Türleri",
+        paragraphs: [
+          "Endüstriyel mutfaklarda kullanılan farklı kapasite ve tipteki bulaşık makinelerine servis hizmeti sunuyoruz. Her cihaz tipi için özel teknik bilgi ve ekipmanla müdahale ediyoruz.",
+        ],
+      },
+      {
+        id: "kapasite-bazli-cihazlar",
+        level: 3,
+        heading: "Kapasite Bazlı Cihazlar",
+        paragraphs: [
+          "<strong>500 Tabak Kapasiteli Bulaşık Makineleri</strong> Küçük ve orta ölçekli işletmeler için ideal olan bu cihazlarda pompa, ısıtıcı ve elektronik sistem arızalarına hızlı çözüm üretiyoruz.",
+          "<strong>1000 Tabak Kapasiteli Bulaşık Makineleri</strong> Restoran ve kafelerde yaygın kullanılan bu makinelerde periyodik bakım ve acil onarım hizmetleri sunuyoruz.",
+          "<strong>2000 Tabak Kapasiteli Bulaşık Makineleri</strong> Büyük ölçekli catering firmaları ve oteller için yüksek kapasiteli bu cihazlarda kompresör, konveyör sistemi ve kontrol paneli servisleri veriyoruz.",
+        ],
+      },
+      {
+        id: "cihaz-tipi-bazli-hizmetler",
+        level: 3,
+        heading: "Cihaz Tipi Bazlı Hizmetler",
+        paragraphs: [
+          "<strong>Giyotin Tip Bulaşık Makineleri</strong> Hızlı yıkama döngüsü sunan giyotin tip makinelerde kapak mekanizması, su basıncı ve sıcaklık kontrolü konularında teknik destek sağlıyoruz.",
+          "<strong>Tünel Tip Bulaşık Makineleri</strong> Sürekli çalışma prensibiyle çalışan tünel tip makinelerde konveyör sistemi, motor ve otomatik dozaj sistemleri servisleri sunuyoruz.",
+          "<strong>Bardak Yıkama Makineleri</strong> Bar ve kafelerde kullanılan bardak yıkama makinelerinde özel sepet sistemleri, düşük su tüketimi ve hızlı kurutma teknolojileri için bakım hizmeti veriyoruz.",
+          "<strong>Tezgah Altı Bulaşık Makineleri</strong> Kompakt tasarımıyla mutfaklarda yer tasarrufu sağlayan tezgah altı modellerde filtre temizliği, pompa ve elektronik kart servisleri gerçekleştiriyoruz.",
+          "<strong>Tabak Yıkama Makineleri</strong> Özel tabak sepetleri ve yüksek basınçlı yıkama sistemleri ile çalışan bu cihazlarda püskürtme kolları, filtre sistemleri ve ısıtıcı eleman bakımını yapıyoruz.",
+          "Her cihaz tipi için özel teknik bilgi ve ekipmanla müdahale ediyor, işletmenizin ihtiyacına göre en uygun çözümü üretiyoruz.",
+        ],
+      },
+      {
+        id: "sik-karsilasilan-sorunlar",
+        level: 2,
+        heading: "Sık Karşılaşılan Sorunlar",
+        paragraphs: [
+          "Endüstriyel bulaşık makinelerinde en sık karşılaşılan sorunlar şunlar:",
+          "Su almama: Su giriş vanası tıkalı, şebeke basıncı düşük veya pompa arızalı",
+          "Su ısıtmama: Rezistans, termostat veya kontrol kartı sorunu",
+          "Yıkama performansı düşüklüğü: Püskürtme kolları tıkalı, filtreler kirli veya deterjan dozaj sistemi arızalı",
+          "Su kaçağı: Kapı contaları yıpranmış, hortum bağlantıları gevşek veya tahliye hattı tıkalı",
+          "Elektronik arızalar: Kontrol paneli, sensör veya programlama hataları",
+          "Bu sorunların çoğu, düzenli bakım ile önlenebilir. Endüstriyel bulaşık makinesi tamiri için profesyonel destek almanız, cihazınızın ömrünü uzatır.",
+        ],
+      },
+      {
+        id: "periyodik-bakim",
+        level: 2,
+        heading: "Periyodik Bakım",
+        paragraphs: [
+          "Bakım sırasında cihazın filtreleri, bağlantıları, hareketli parçaları ve güvenlik elemanları kontrol edilir. Kullanım sırasında ortaya çıkabilecek bazı sorunlar daha erken fark edilebilir. Yoğun çalışan mutfaklarda küçük bir arızanın büyümeden müdahale edilmesi, beklenmedik duruşların önüne geçer.",
+          "Düzenli periyodik bakım programı uygulamak, servis ihtiyacını minimize etmenin en etkili yolu. Çınar Endüstriyel Mutfak Servisi olarak, işletmenize özel bakım planları oluşturuyor, cihazlarınızın ömrünü uzatıyor ve beklenmedik arızaları önlüyoruz.",
+          "Isıtma ve soğutma sistemlerinin çalışma durumu da cihazın türüne göre incelenir. Küçük bir arıza büyümeden fark edilebilir. Yoğun çalışan mutfaklarda bu kontroller, beklenmedik cihaz duruşlarının azaltılmasına yardımcı olur.",
+        ],
+      },
+      {
+        id: "neden-cinar-endustriyel-mutfak-servis",
+        level: 2,
+        heading: "Neden Çınar Endüstriyel Mutfak Servis?",
+        paragraphs: [
+          "Servis talebi oluşturulduğunda öncelikle cihazın modeli ve yaşanan arıza hakkında bilgi alıyoruz. Arızanın niteliğine göre müdahale planlanıyor ve işlem öncesinde müşteriye yapılacak çalışma hakkında bilgi veriliyor.",
+          "Çınar Endüstriyel Mutfak Servis olarak servis sürecinde önceliğimiz, arızanın kaynağını doğru belirlemek ve yapılacak işlem hakkında müşteriyi önceden bilgilendirmek.",
+          "7/24 acil servis desteği, acil durumlarda hızlı müdahale. Geniş servis ağı, İstanbul'un tüm Avrupa ve Anadolu ilçelerine hizmet imkanı. Şeffaf fiyatlandırma, önceden bilgilendirme, gizli ücret yok. Garantili işçilik, yapılan tüm işlemler garanti kapsamında.",
+        ],
+      },
+      {
+        id: "endustriyel-bulasik-makinesi-servisi-icin-cinar-endustriyel-mutfak-servisi",
+        level: 2,
+        heading: "Endüstriyel Bulaşık Makinesi Servisi İçin Çınar Endüstriyel Mutfak Servisi",
+        paragraphs: [
+          "Çınar Endüstriyel Mutfak Servisi olarak İstanbul'un Avrupa ve Anadolu Yakası'ndaki tüm ilçelerinde profesyonel mutfak ekipmanları için servis hizmeti veriyoruz. Bulaşık makineleri, fırınlar, ocaklar ve buzdolaplarında arıza tespiti, bakım ve onarım çalışmalarını gerçekleştiriyoruz.",
+          "Servis talebiniz sırasında cihazın modelini ve yaşanan sorunu paylaşmanız yeterli. Cihazın verdiği hata, çıkardığı ses, sıcaklık problemi veya su kaçağı gibi belirtileri önceden belirtmeniz, arızanın değerlendirilmesini kolaylaştırır.",
+          "Endüstriyel bulaşık makinesi servisi için Çınar Endüstriyel Mutfak Servisi ile iletişime geçebilirsiniz.",
+        ],
+      },
+    ],
+    faqHeading: "Sık Sorulan Sorular",
+    faq: [
+      {
+        question: "\"Cihaz gece arızalandı, servis gerekiyor.\" Endüstriyel bulaşık makinesi servisi için nasıl iletişim kurabilirim?",
+        answer: "Servis talebi oluşturmak için telefon, e-posta veya web sitemiz üzerinden bize ulaşabilirsiniz. Cihazın modelini ve yaşanan arızayı önceden paylaşmanız, servis sürecinin daha hızlı planlanmasına yardımcı olur. Acil durumlarda 7/24 destek hattımızdan bize ulaşabilirsiniz.",
+      },
+      {
+        question: "Servis ücretleri neye göre belirlenir?",
+        answer: "Servis ücretini belirleyen temel unsurlar arızanın niteliği, değişmesi gereken parça ve işlem süresidir. Cihaz yerinde incelendikten sonra yapılacak işlem ve maliyet hakkında bilgi veriyoruz.",
+      },
+      {
+        question: "Periyodik bakım ne sıklıkla yapılmalı?",
+        answer: "Cihaz türüne ve kullanım yoğunluğuna göre 3-6 ayda bir periyodik bakım öneriyoruz. Yoğun kullanılan ekipmanlar için daha sık bakım programları oluşturulabilir.",
+      },
+      {
+        question: "Orijinal yedek parça kullanıyor musunuz?",
+        answer: "Evet, hizmetlerimizde sadece orijinal ve üretici onaylı yedek parçalar kullanıyoruz. Bu, cihazınızın uzun ömürlü olmasını ve garanti koşullarının korunmasını sağlar.",
+      },
+    ],
+  },
 };
 
-export function getServiceContent(slug: string): ServiceContent | undefined {
-  return serviceContent[slug];
+export function getServiceContent(key: string): RichContent | undefined {
+  return serviceContent[key];
 }

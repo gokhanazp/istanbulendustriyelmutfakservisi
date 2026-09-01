@@ -6,6 +6,8 @@ export interface Brand {
   services: string[];
   logo?: string;
   logoDark?: boolean;
+  seoTitle?: string;
+  seoDescription?: string;
 }
 
 export interface Service {
@@ -21,18 +23,21 @@ export interface Service {
   seoKeywords?: string[];
 }
 
-export interface ServiceContentSection {
+export interface RichContentSection {
   /** Sayfa içi bağlantı için başlık anchor'ı */
   id: string;
   /** 2 = ana başlık, 3 = alt başlık */
   level: 2 | 3;
+  /** Boş bırakılırsa başlık render edilmez, yalnızca paragraflar basılır */
   heading: string;
+  /** Dolu ise başlık bu sayfaya link olur (site içi yol) */
+  href?: string;
   /** Satır içi <strong> ve <a> etiketleri içerebilen paragraflar */
   paragraphs: string[];
 }
 
-export interface ServiceContent {
-  sections: ServiceContentSection[];
+export interface RichContent {
+  sections: RichContentSection[];
   faqHeading: string;
   faq: FAQ[];
 }
