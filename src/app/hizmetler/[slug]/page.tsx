@@ -4,12 +4,14 @@ import { brands } from "@/data/brands";
 import { getBrandServicesByServiceId } from "@/data/brand-services";
 import { getServiceContent } from "@/data/service-content";
 import { getServiceGallery } from "@/data/service-gallery";
+import { getServiceVideos } from "@/data/service-videos";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTABanner } from "@/components/ui/CTABanner";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { RichContent } from "@/components/sections/RichContent";
 import { ServiceGallery } from "@/components/sections/ServiceGallery";
+import { ServiceVideos } from "@/components/sections/ServiceVideos";
 import Link from "next/link";
 import {
   buildBreadcrumbSchema,
@@ -204,6 +206,9 @@ export default async function ServiceDetailPage(
 
   // Bu hizmete ait saha fotoğrafları (yoksa galeri bölümü render edilmez)
   const galleryImages = getServiceGallery(service.slug);
+
+  // Bu hizmete ait saha videoları (yoksa video bölümü render edilmez)
+  const serviceVideoItems = getServiceVideos(service.slug);
 
   const serviceFeatures = [
     {
@@ -449,6 +454,12 @@ export default async function ServiceDetailPage(
       <ServiceGallery
         images={galleryImages}
         description={`İstanbul genelinde gerçekleştirdiğimiz ${service.name.toLowerCase()} çalışmalarımızdan kareler. Sahada müdahale ettiğimiz cihazlar ve uyguladığımız bakım işlemleri.`}
+      />
+
+      {/* Çalışma Videolarımız */}
+      <ServiceVideos
+        videos={serviceVideoItems}
+        description={`Sahada gerçekleştirdiğimiz ${service.name.toLowerCase()} çalışmalarından video kayıtları.`}
       />
 
       {/* Related Brands */}

@@ -86,3 +86,16 @@ export interface GalleryImage {
   width: number;
   height: number;
 }
+
+export interface ServiceVideo {
+  /** /public altındaki video dosya yolu (.mp4) */
+  src: string;
+  /** /public altındaki poster (kapak) görseli */
+  poster: string;
+  /** Video başlığı (kart üzerinde ve erişilebilirlik için) */
+  title: string;
+  /** Videonun altında görünen kısa açıklama */
+  caption: string;
+  width: number;
+  height: number;
+}
