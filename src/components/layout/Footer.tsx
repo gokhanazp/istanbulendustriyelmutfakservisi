@@ -14,8 +14,8 @@ export function Footer() {
   const regions = [
     { label: "Sultanbeyli", href: "/bolgeler/sultanbeyli" },
     { label: "Tuzla", href: "/bolgeler/tuzla" },
-    { label: "Küçükçekmece", href: "/bolgeler/kucukcekmece" },
-    { label: "Bahçelievler", href: "/bolgeler/bahcelievler" },
+    { label: "Küçükçekmece", href: "/bolgeler/kucukccekmece" },
+    { label: "Bahçelievler", href: "/bolgeler/bachelievler" },
     { label: "Zeytinburnu", href: "/bolgeler/zeytinburnu" },
     { label: "Beyoğlu", href: "/bolgeler/beyoglu" },
   ];

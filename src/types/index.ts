@@ -75,3 +75,14 @@ export interface BlogPost {
   seoDescription?: string;
   seoKeywords?: string[];
 }
+
+export interface GalleryImage {
+  /** /public altındaki dosya yolu */
+  src: string;
+  /** Görsel SEO'su için açıklayıcı alt metni */
+  alt: string;
+  /** Görselin altında görünen kısa açıklama */
+  caption: string;
+  width: number;
+  height: number;
+}

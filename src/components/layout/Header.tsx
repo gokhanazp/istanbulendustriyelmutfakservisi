@@ -32,9 +32,9 @@ export function Header() {
     {
       label: "Soğutma Ekipmanları",
       items: [
-        { name: "Buzdolabı Servisi", href: "/hizmetler/buzdolabi-servisi" },
+        { name: "Buzdolabı Servisi", href: "/hizmetler/endustriyel-buzdolabi-servisi" },
         { name: "Buzdolabı Gaz Kaçağı Servisi", href: "/hizmetler/buzdolabi-gaz-kacagi-servisi" },
-        { name: "Endüstriyel Buzdolabı Servisi", href: "/hizmetler/endustriyel-buzdolabi-servisi" },
+        { name: "Sanayi Tipi Buzdolabı Servisi", href: "/hizmetler/sanayi-tipi-buzdolabi-servisi" },
         { name: "Soğuk Oda Servisi", href: "/hizmetler/soguk-oda-servisi" },
         { name: "Soğuk Hava Deposu Servisi", href: "/hizmetler/soguk-hava-deposu-servisi" },
         { name: "Et Dolabı Servisi", href: "/hizmetler/et-dolabi-servisi" },

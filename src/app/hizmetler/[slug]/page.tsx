@@ -3,11 +3,13 @@ import { services } from "@/data/services";
 import { brands } from "@/data/brands";
 import { getBrandServicesByServiceId } from "@/data/brand-services";
 import { getServiceContent } from "@/data/service-content";
+import { getServiceGallery } from "@/data/service-gallery";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { CTABanner } from "@/components/ui/CTABanner";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { RichContent } from "@/components/sections/RichContent";
+import { ServiceGallery } from "@/components/sections/ServiceGallery";
 import Link from "next/link";
 import {
   buildBreadcrumbSchema,
@@ -74,6 +76,14 @@ export async function generateMetadata(
   // layout'taki "%s | SITE_NAME" şablonu bunu tekrar etmesin diye absolute kullanıyoruz.
   const hasOwnContent = Boolean(getServiceContent(service.slug));
 
+  // Sayfaya ait saha fotoğrafı varsa OG görseli olarak onu kullan.
+  const ogImages = getServiceGallery(service.slug).map((img) => ({
+    url: `${SITE_URL}${img.src}`,
+    width: img.width,
+    height: img.height,
+    alt: img.alt,
+  }));
+
   return {
     title: hasOwnContent ? { absolute: title } : title,
     description,
@@ -85,6 +95,7 @@ export async function generateMetadata(
       siteName: SITE_NAME,
       locale: "tr_TR",
       type: "website",
+      ...(ogImages.length > 0 ? { images: ogImages } : {}),
     },
     alternates: {
       canonical: `/hizmetler/${service.slug}`,
@@ -190,6 +201,9 @@ export default async function ServiceDetailPage(
 
   // Bu hizmete özel uzun form içerik (varsa şablonun varsayılan metnini geçersiz kılar)
   const content = getServiceContent(service.slug);
+
+  // Bu hizmete ait saha fotoğrafları (yoksa galeri bölümü render edilmez)
+  const galleryImages = getServiceGallery(service.slug);
 
   const serviceFeatures = [
     {
@@ -431,6 +445,12 @@ export default async function ServiceDetailPage(
         </div>
       </section>
 
+      {/* Çalışmalarımızdan Görüntüler */}
+      <ServiceGallery
+        images={galleryImages}
+        description={`İstanbul genelinde gerçekleştirdiğimiz ${service.name.toLowerCase()} çalışmalarımızdan kareler. Sahada müdahale ettiğimiz cihazlar ve uyguladığımız bakım işlemleri.`}
+      />
+
       {/* Related Brands */}
       {relatedBrands.length > 0 && (
         <section className="py-14 md:py-20 bg-gradient-to-b from-slate-50 to-white">
@@ -610,7 +630,16 @@ export default async function ServiceDetailPage(
             name: service.name,
             description: service.description,
             url: canonical(`/hizmetler/${service.slug}`),
-            image: SITE_LOGO,
+            image:
+              galleryImages.length > 0
+                ? galleryImages.map((img) => ({
+                    "@type": "ImageObject",
+                    url: `${SITE_URL}${img.src}`,
+                    caption: img.caption,
+                    width: img.width,
+                    height: img.height,
+                  }))
+                : SITE_LOGO,
             serviceType: service.name,
             category: categoryNames[service.category],
             areaServed: {
